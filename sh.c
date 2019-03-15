@@ -1,5 +1,6 @@
 // Shell.
 
+#include <memory.h>
 #include "types.h"
 #include "user.h"
 #include "fcntl.h"
@@ -52,6 +53,27 @@ struct backcmd {
 int fork1(void);  // Fork but panics on failure.
 void panic(char*);
 struct cmd *parsecmd(char*);
+char* PATH; // YOAV ADD PATH ENV VAR
+
+char*
+cutPath(char *path)
+{
+
+}
+
+int
+execWithPath(char *path, char **argv)
+{
+  char* curr_path;
+  strcpy( curr_path , PATH );
+  while( curr_path != "" )
+  {
+    char* path_send = strcat( curr_path , path);
+    exec( path_send , argv);
+    curr_path = cutPath( curr_path );
+  }
+
+}
 
 // Execute cmd.  Never returns.
 void
@@ -76,6 +98,12 @@ runcmd(struct cmd *cmd)
     if(ecmd->argv[0] == 0)
       exit();
     exec(ecmd->argv[0], ecmd->argv);
+    // from here
+
+    execWithPath(ecmd->argv[0], ecmd->argv);
+
+
+    // till here
     printf(2, "exec %s failed\n", ecmd->argv[0]);
     break;
 
@@ -154,7 +182,17 @@ main(void)
       break;
     }
   }
+  // from here
+  int fd2;
 
+  if((fd2 = open("path", O_RDWR)) >= 0){
+    int size = sizeof(PATH);
+    if(read(fd2, &PATH, size) != size){
+        printf(1, "error: read from path file failed\n");
+        exit();
+    }
+
+  }
   // Read and run input commands.
   while(getcmd(buf, sizeof(buf)) >= 0){
     if(buf[0] == 'c' && buf[1] == 'd' && buf[2] == ' '){
