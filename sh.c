@@ -102,18 +102,20 @@ execWithPath(char *path, char **argv)
     {
         printf(2 , " we have in WHILE %s \n" , curr_path);
 
+        temp2 = concatPath( curr_path , path );
+        exec( temp2 , argv );
+
+        // if exec failed we must cut edge
+
         reverse_string(curr_path);
-        temp = strchr(++curr_path, ':');
+
+        temp = strchr(++curr_path, '/');
 
         if (temp == NULL)
             curr_path = NULL;
         else {
             reverse_string(temp);
             strcpy(curr_path, temp);
-
-
-        temp2 = concatPath( curr_path , path );
-        printf(2 , " fuck you noam %s \n" , temp2);
         }
     }
   return -1;
