@@ -1,6 +1,5 @@
 // Shell.
 
-#include <memory.h>
 #include "types.h"
 #include "user.h"
 #include "fcntl.h"
@@ -11,6 +10,7 @@
 #define PIPE  3
 #define LIST  4
 #define BACK  5
+#define NULL  ((void *) 0)
 
 #define MAXARGS 10
 
@@ -53,25 +53,70 @@ struct backcmd {
 int fork1(void);  // Fork but panics on failure.
 void panic(char*);
 struct cmd *parsecmd(char*);
-char* PATH; // YOAV ADD PATH ENV VAR
+char PATH[512]; // YOAV ADD PATH ENV VAR
+
+void
+swap( int a , int b , char *str)
+{
+    char temp = str[a];
+    str[a] = str[b];
+    str[b] = temp;
+}
+
+void
+reverse_string( char *str )
+{
+    int len = strlen( str ) - 1;
+    int i , k = len;
+    for( i = 0 ; i < len ; i++ )
+    {
+        swap( i , k , str );
+        k--;
+        if( k == len/2 )
+            break;
+    }
+}
 
 char*
-cutPath(char *path)
-{
+concatPath(char *prefix , char *suffix) {
+    char *output = malloc(sizeof(prefix) + sizeof(suffix));
+    char *temp = output;
+
+    while((*temp++ = *prefix++) != 0);
+    temp--;
+    while((*temp++ = *suffix++) != 0);
+
+    return output;
 
 }
+
 
 int
 execWithPath(char *path, char **argv)
 {
-  char* curr_path;
-  strcpy( curr_path , PATH );
-  while( curr_path != "" )
-  {
-    char* path_send = strcat( curr_path , path);
-    exec( path_send , argv);
-    curr_path = cutPath( curr_path );
-  }
+    char *temp;
+    char *temp2;
+    char *curr_path = malloc(strlen(PATH));
+    strcpy( curr_path , PATH );
+    while( curr_path != NULL )
+    {
+        printf(2 , " we have in WHILE %s \n" , curr_path);
+
+        reverse_string(curr_path);
+        temp = strchr(++curr_path, ':');
+
+        if (temp == NULL)
+            curr_path = NULL;
+        else {
+            reverse_string(temp);
+            strcpy(curr_path, temp);
+
+
+        temp2 = concatPath( curr_path , path );
+        printf(2 , " fuck you noam %s \n" , temp2);
+        }
+    }
+  return -1;
 
 }
 
@@ -186,13 +231,13 @@ main(void)
   int fd2;
 
   if((fd2 = open("path", O_RDWR)) >= 0){
-    int size = sizeof(PATH);
-    if(read(fd2, &PATH, size) != size){
+    if( read(fd2, PATH, sizeof(PATH)) < 0 ){
         printf(1, "error: read from path file failed\n");
         exit();
     }
 
   }
+
   // Read and run input commands.
   while(getcmd(buf, sizeof(buf)) >= 0){
     if(buf[0] == 'c' && buf[1] == 'd' && buf[2] == ' '){
