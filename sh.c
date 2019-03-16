@@ -78,13 +78,18 @@ reverse_string( char *str )
 }
 
 char*
-concatPath(char *prefix , char *suffix) {
-    char *output = malloc(sizeof(prefix) + sizeof(suffix));
-    char *temp = output;
+concatPath(const char *prefix , const char *suffix , char *dest) {
+    char *output;
+    output=dest;
+    //char *temp2 = &prefix;
 
-    while((*temp++ = *prefix++) != 0);
-    temp--;
-    while((*temp++ = *suffix++) != 0);
+    printf(2,"prefix= %s \n", prefix);
+    while((*dest++ = *prefix++) != 0);
+    dest--;
+    printf(2,"prefix= %s \n", prefix);
+
+    //temp2 = &suffix;
+    while((*dest++ = *suffix++) != 0);
 
     return output;
 
@@ -100,20 +105,29 @@ execWithPath(char *path, char **argv)
     strcpy( curr_path , PATH );
     while( curr_path != NULL )
     {
-        printf(2 , " we have in WHILE %s \n" , curr_path);
-
-        temp2 = concatPath( curr_path , path );
+        printf(1,"-----------------------\n");
+        temp2 = malloc(sizeof(curr_path) + sizeof(path));
+        printf( 2 , " curr_path = %s \n" , curr_path);
+        temp2 = concatPath( curr_path , path , temp2 );
+        printf( 2 , " concatPath = %s \n" , temp2);
+        printf( 2 , " curr-path after concatPath = %s \n" , curr_path);
         exec( temp2 , argv );
 
-        // if exec failed we must cut edge
+        // if exec failed we must cut edge and free concated path
+        free(temp2);
+        printf( 2 , " curr_path = %s \n" , curr_path);
 
         reverse_string(curr_path);
-
+        printf( 2 , " rev_curr_path = %s \n" , curr_path);
         temp = strchr(++curr_path, '/');
 
         if (temp == NULL)
-            curr_path = NULL;
-        else {
+        {
+            free(curr_path);
+            return -1;
+        }
+        else
+        {
             reverse_string(temp);
             strcpy(curr_path, temp);
         }
@@ -229,6 +243,8 @@ main(void)
       break;
     }
   }
+
+
   // from here
   int fd2;
 
@@ -239,6 +255,8 @@ main(void)
     }
 
   }
+  // till here
+
 
   // Read and run input commands.
   while(getcmd(buf, sizeof(buf)) >= 0){
