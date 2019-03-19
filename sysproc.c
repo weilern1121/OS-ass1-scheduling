@@ -16,14 +16,14 @@ sys_fork(void)
 int
 sys_exit(void)
 {
-  exit();
+  exit(0);
   return 0;  // not reached
 }
 
 int
 sys_wait(void)
 {
-  return wait();
+  return wait(0);
 }
 
 int
@@ -88,4 +88,38 @@ sys_uptime(void)
   xticks = ticks;
   release(&tickslock);
   return xticks;
+}
+
+int
+sys_detach(void){
+    int pid;
+  if(argint(0, &pid) < 0)
+    return -1;
+  return detach(pid);
+}
+//TODO -need to understand how to call this sys_call
+int
+sys_priority(void){
+  int pid;
+  if(argint(0, &pid) < 0)
+    return -1;
+  priority(pid);
+  return 0;
+}
+
+int
+sys_policy(void){
+    int pid;
+    if(argint(0, &pid) < 0)
+        return -1;
+    policy(pid);
+    return 0;
+}
+
+
+int
+sys_wait_stat(void)
+{
+  //TODO - add perf struct to the args of the function
+  return 0;
 }

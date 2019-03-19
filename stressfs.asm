@@ -55,7 +55,7 @@ main(int argc, char *argv[])
     if(fork() > 0)
   5d:	e8 0e 03 00 00       	call   370 <fork>
   62:	85 c0                	test   %eax,%eax
-  64:	0f 8f d0 00 00 00    	jg     13a <main+0x13a>
+  64:	0f 8f de 00 00 00    	jg     148 <main+0x148>
   for(i = 0; i < 4; i++)
   6a:	43                   	inc    %ebx
   6b:	83 fb 04             	cmp    $0x4,%ebx
@@ -135,20 +135,15 @@ main(int argc, char *argv[])
  128:	89 3c 24             	mov    %edi,(%esp)
  12b:	e8 70 02 00 00       	call   3a0 <close>
 
-  wait();
- 130:	e8 4b 02 00 00       	call   380 <wait>
+  wait(0);
+ 130:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 137:	e8 44 02 00 00       	call   380 <wait>
 
-  exit();
- 135:	e8 3e 02 00 00       	call   378 <exit>
- 13a:	88 d8                	mov    %bl,%al
- 13c:	e9 33 ff ff ff       	jmp    74 <main+0x74>
- 141:	66 90                	xchg   %ax,%ax
- 143:	66 90                	xchg   %ax,%ax
- 145:	66 90                	xchg   %ax,%ax
- 147:	66 90                	xchg   %ax,%ax
- 149:	66 90                	xchg   %ax,%ax
- 14b:	66 90                	xchg   %ax,%ax
- 14d:	66 90                	xchg   %ax,%ax
+  exit(0);
+ 13c:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 143:	e8 30 02 00 00       	call   378 <exit>
+ 148:	88 d8                	mov    %bl,%al
+ 14a:	e9 25 ff ff ff       	jmp    74 <main+0x74>
  14f:	90                   	nop
 
 00000150 <strcpy>:

@@ -47,16 +47,13 @@ main(int argc, char *argv[])
   5f:	00 
   60:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
   67:	e8 84 03 00 00       	call   3f0 <printf>
-  exit();
-  6c:	e8 37 02 00 00       	call   2a8 <exit>
-  71:	66 90                	xchg   %ax,%ax
-  73:	66 90                	xchg   %ax,%ax
-  75:	66 90                	xchg   %ax,%ax
-  77:	66 90                	xchg   %ax,%ax
-  79:	66 90                	xchg   %ax,%ax
-  7b:	66 90                	xchg   %ax,%ax
-  7d:	66 90                	xchg   %ax,%ax
-  7f:	90                   	nop
+  exit(0);
+  6c:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  73:	e8 30 02 00 00       	call   2a8 <exit>
+  78:	66 90                	xchg   %ax,%ax
+  7a:	66 90                	xchg   %ax,%ax
+  7c:	66 90                	xchg   %ax,%ax
+  7e:	66 90                	xchg   %ax,%ax
 
 00000080 <strcpy>:
 #include "user.h"

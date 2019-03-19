@@ -22,15 +22,12 @@ main(void)
     sleep(5);  // Let child exit before parent.
   12:	c7 04 24 05 00 00 00 	movl   $0x5,(%esp)
   19:	e8 ca 02 00 00       	call   2e8 <sleep>
-  exit();
-  1e:	e8 35 02 00 00       	call   258 <exit>
-  23:	66 90                	xchg   %ax,%ax
-  25:	66 90                	xchg   %ax,%ax
-  27:	66 90                	xchg   %ax,%ax
-  29:	66 90                	xchg   %ax,%ax
-  2b:	66 90                	xchg   %ax,%ax
-  2d:	66 90                	xchg   %ax,%ax
-  2f:	90                   	nop
+  exit(0);
+  1e:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  25:	e8 2e 02 00 00       	call   258 <exit>
+  2a:	66 90                	xchg   %ax,%ax
+  2c:	66 90                	xchg   %ax,%ax
+  2e:	66 90                	xchg   %ax,%ax
 
 00000030 <strcpy>:
 #include "user.h"
