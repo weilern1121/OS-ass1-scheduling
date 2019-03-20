@@ -13,8 +13,16 @@ extern RoundRobinQueue rrq;
 extern RunningProcessesHolder rpholder;
 
 long long getAccumulator(struct proc *p) {
-	//Implement this function, remove the panic line.
-	panic("getAccumulator: not implemented\n");
+	return p->accumulator;
+}
+
+long long getMinAccumulator(){
+  long long tmp1,tmp2;
+  pq.getMinAccumulator(&tmp1);
+  rpholder.getMinAccumulator(&tmp2);
+  if(tmp1<tmp2)
+    return tmp1;
+  return tmp2;
 }
 
 struct {
@@ -163,6 +171,8 @@ userinit(void)
   p->state = RUNNABLE;
     //TODO- roundrobin addition
   rrq.enqueue(p);
+  //TODO- priority queue addition
+  pq.put(p);
 
   release(&ptable.lock);
 }
@@ -231,6 +241,15 @@ fork(void)
   np->state = RUNNABLE;
     //TODO- roundrobin addition
   rrq.enqueue(np);
+  //TODO - priority addition
+  np->priority=5;
+  //check if this is the only procces
+  if(pq.isEmpty()) //if so -> acc=0
+    np->accumulator=0;
+  else //there are more than 1 procces -> change acc value to min
+    pq.getMinAccumulator(&np->accumulator);
+  //add np (i.e currproc) to the priority queue
+  pq.put(np);
 
   release(&ptable.lock);
 
@@ -369,7 +388,8 @@ scheduler(void)
                     c->proc = p;
                     switchuvm(p);
                     p->state = RUNNING;
-
+                    //TODO - adittion to priority queue
+                    rpholder.add(p);
                     swtch(&(c->scheduler), p->context);
                     switchkvm();
 
@@ -381,8 +401,8 @@ scheduler(void)
             break;
 
         case 2: //3.2 - priority scheduling
-            if (!rrq.isEmpty()) {
-                p = rrq.dequeue();
+            if (!pq.isEmpty()) {
+                p = pq.extractMin();
                 if (p != null) {
                     // Switch to chosen process.  It is the process's job
                     // to release ptable.lock and then reacquire it
@@ -390,7 +410,8 @@ scheduler(void)
                     c->proc = p;
                     switchuvm(p);
                     p->state = RUNNING;
-
+                    //TODO - adittion to priority queue
+                    rpholder.add(p);
                     swtch(&(c->scheduler), p->context);
                     switchkvm();
 
@@ -412,7 +433,8 @@ scheduler(void)
                 c->proc = p;
                 switchuvm(p);
                 p->state = RUNNING;
-
+                //TODO - adittion to priority queue
+                rpholder.add(p);
                 swtch(&(c->scheduler), p->context);
                 switchkvm();
 
@@ -460,8 +482,11 @@ yield(void)
 {
   acquire(&ptable.lock);  //DOC: yieldlock
   myproc()->state = RUNNABLE;
+  myproc()->accumulator+=myproc()->priority;
   //TODO - addition to round-robin scheduling
   rrq.enqueue(myproc());
+  //TODO- priority queue addition
+  pq.put(myproc());
   sched();
   release(&ptable.lock);
 }
@@ -500,6 +525,8 @@ sleep(void *chan, struct spinlock *lk)
   if(lk == 0)
     panic("sleep without lk");
 
+  //TODO - addition to priority queue - add the priority to the acc
+  p->accumulator+=p->priority;
   // Must acquire ptable.lock in order to
   // change p->state and then call sched.
   // Once we hold ptable.lock, we can be
@@ -539,7 +566,8 @@ wakeup1(void *chan)
         p->state = RUNNABLE;
         //TODO- roundrobin addition
         rrq.enqueue(p);
-
+        //TODO- priority queue addition
+        pq.put(p);
     }
 }
 
@@ -569,6 +597,8 @@ kill(int pid)
           p->state = RUNNABLE;
           //TODO- roundrobin addition
           rrq.enqueue(p);
+          //TODO- priority queue addition
+          pq.put(p);
       }
       release(&ptable.lock);
       return 0;
