@@ -159,6 +159,8 @@ userinit(void)
   acquire(&ptable.lock);
 
   p->state = RUNNABLE;
+    //TODO- roundrobin addition
+  rrq.enqueue(p);
 
   release(&ptable.lock);
 }
@@ -225,6 +227,8 @@ fork(void)
   acquire(&ptable.lock);
 
   np->state = RUNNABLE;
+    //TODO- roundrobin addition
+  rrq.enqueue(np);
 
   release(&ptable.lock);
 
@@ -350,23 +354,29 @@ scheduler(void)
 
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->state != RUNNABLE)
-        continue;
 
-      // Switch to chosen process.  It is the process's job
-      // to release ptable.lock and then reacquire it
-      // before jumping back to us.
-      c->proc = p;
-      switchuvm(p);
-      p->state = RUNNING;
+    if(!rrq.isEmpty()){
+        p=rrq.dequeue();
+        if(p!=null) {
+            //TODO - remove note from 3 lines under to regular scheduling
+//    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+//      if(p->state != RUNNABLE)
+//        continue;
 
-      swtch(&(c->scheduler), p->context);
-      switchkvm();
+            // Switch to chosen process.  It is the process's job
+            // to release ptable.lock and then reacquire it
+            // before jumping back to us.
+            c->proc = p;
+            switchuvm(p);
+            p->state = RUNNING;
 
-      // Process is done running for now.
-      // It should have changed its p->state before coming back.
-      c->proc = 0;
+            swtch(&(c->scheduler), p->context);
+            switchkvm();
+
+            // Process is done running for now.
+            // It should have changed its p->state before coming back.
+            c->proc = 0;
+        }
     }
     release(&ptable.lock);
 
@@ -405,6 +415,8 @@ yield(void)
 {
   acquire(&ptable.lock);  //DOC: yieldlock
   myproc()->state = RUNNABLE;
+  //TODO - addition to round-robin scheduling
+  rrq.enqueue(myproc());
   sched();
   release(&ptable.lock);
 }
@@ -478,8 +490,12 @@ wakeup1(void *chan)
   struct proc *p;
 
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
-    if(p->state == SLEEPING && p->chan == chan)
-      p->state = RUNNABLE;
+    if(p->state == SLEEPING && p->chan == chan){
+        p->state = RUNNABLE;
+        //TODO- roundrobin addition
+        rrq.enqueue(p);
+
+    }
 }
 
 // Wake up all processes sleeping on chan.
@@ -504,8 +520,11 @@ kill(int pid)
     if(p->pid == pid){
       p->killed = 1;
       // Wake process from sleep if necessary.
-      if(p->state == SLEEPING)
-        p->state = RUNNABLE;
+      if(p->state == SLEEPING){
+          p->state = RUNNABLE;
+          //TODO- roundrobin addition
+          rrq.enqueue(p);
+      }
       release(&ptable.lock);
       return 0;
     }
