@@ -17,9 +17,11 @@ long long getAccumulator(struct proc *p) {
 }
 
 long long getMinAccumulator(){
-  long long tmp1,tmp2;
-  pq.getMinAccumulator(&tmp1);
-  rpholder.getMinAccumulator(&tmp2);
+  long long tmp1=99999,tmp2=99999;
+  if(!pq.isEmpty())
+    pq.getMinAccumulator(&tmp1);
+  if(!rpholder.isEmpty())
+    rpholder.getMinAccumulator(&tmp2);
   if(tmp1<tmp2)
     return tmp1;
   return tmp2;
@@ -390,6 +392,7 @@ scheduler(void)
                     p->state = RUNNING;
                     //TODO - adittion to priority queue
                     rpholder.add(p);
+
                     swtch(&(c->scheduler), p->context);
                     switchkvm();
 
@@ -412,6 +415,7 @@ scheduler(void)
                     p->state = RUNNING;
                     //TODO - adittion to priority queue
                     rpholder.add(p);
+
                     swtch(&(c->scheduler), p->context);
                     switchkvm();
 
@@ -435,6 +439,7 @@ scheduler(void)
                 p->state = RUNNING;
                 //TODO - adittion to priority queue
                 rpholder.add(p);
+
                 swtch(&(c->scheduler), p->context);
                 switchkvm();
 
@@ -486,7 +491,9 @@ yield(void)
   //TODO - addition to round-robin scheduling
   rrq.enqueue(myproc());
   //TODO- priority queue addition
-  pq.put(myproc());
+  pq.put(myproc()); //add to runabble queue
+  rpholder.remove(myproc());//remove from running queue
+
   sched();
   release(&ptable.lock);
 }
@@ -525,8 +532,10 @@ sleep(void *chan, struct spinlock *lk)
   if(lk == 0)
     panic("sleep without lk");
 
-  //TODO - addition to priority queue - add the priority to the acc
-  p->accumulator+=p->priority;
+  //TODO - addition to priority queue
+  p->accumulator+=p->priority;  // add the priority to the acc
+  rpholder.remove(p); //remove p from RUNNING queue
+
   // Must acquire ptable.lock in order to
   // change p->state and then call sched.
   // Once we hold ptable.lock, we can be
