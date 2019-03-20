@@ -63,6 +63,7 @@ struct proc {
   char name[16];                 // Process name (debugging)
   int exit_status;               // ADDITION - exit status for exit and wait
   long long accumulator;         //used in priority level
+  int priority;                  //priority - used in 3.2+3.3 scheduling
   struct perf perf;              //performance times
 
 };

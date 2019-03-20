@@ -29,6 +29,8 @@ extern void forkret(void);
 extern void trapret(void);
 
 static void wakeup1(void *chan);
+//TODO- addition
+int currpolicy=88;
 
 void
 pinit(void)
@@ -355,33 +357,76 @@ scheduler(void)
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
 
-    if(!rrq.isEmpty()){
-        p=rrq.dequeue();
-        if(p!=null) {
-            //TODO - remove note from 3 lines under to regular scheduling
-//    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-//      if(p->state != RUNNABLE)
-//        continue;
+    //policies cases - depends on the global variable currpolicy
+    switch (currpolicy) {
+        case 1: //round robin policy
+            if (!pq.isEmpty()) {
+                p = pq.extractMin();
+                if (p != null) {
+                    // Switch to chosen process.  It is the process's job
+                    // to release ptable.lock and then reacquire it
+                    // before jumping back to us.
+                    c->proc = p;
+                    switchuvm(p);
+                    p->state = RUNNING;
 
-            // Switch to chosen process.  It is the process's job
-            // to release ptable.lock and then reacquire it
-            // before jumping back to us.
-            c->proc = p;
-            switchuvm(p);
-            p->state = RUNNING;
+                    swtch(&(c->scheduler), p->context);
+                    switchkvm();
 
-            swtch(&(c->scheduler), p->context);
-            switchkvm();
+                    // Process is done running for now.
+                    // It should have changed its p->state before coming back.
+                    c->proc = 0;
+                }
+            }
+            break;
 
-            // Process is done running for now.
-            // It should have changed its p->state before coming back.
-            c->proc = 0;
-        }
+        case 2: //3.2 - priority scheduling
+            if (!rrq.isEmpty()) {
+                p = rrq.dequeue();
+                if (p != null) {
+                    // Switch to chosen process.  It is the process's job
+                    // to release ptable.lock and then reacquire it
+                    // before jumping back to us.
+                    c->proc = p;
+                    switchuvm(p);
+                    p->state = RUNNING;
+
+                    swtch(&(c->scheduler), p->context);
+                    switchkvm();
+
+                    // Process is done running for now.
+                    // It should have changed its p->state before coming back.
+                    c->proc = 0;
+                }
+            }
+            break;
+
+        default: //default case is what we got with the xv6
+            for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+                if (p->state != RUNNABLE)
+                    continue;
+
+                // Switch to chosen process.  It is the process's job
+                // to release ptable.lock and then reacquire it
+                // before jumping back to us.
+                c->proc = p;
+                switchuvm(p);
+                p->state = RUNNING;
+
+                swtch(&(c->scheduler), p->context);
+                switchkvm();
+
+                // Process is done running for now.
+                // It should have changed its p->state before coming back.
+                c->proc = 0;
+            }
+            break;
+
     }
-    release(&ptable.lock);
-
+      release(&ptable.lock);
   }
 }
+
 
 // Enter scheduler.  Must hold only ptable.lock
 // and have changed proc->state. Saves and restores
@@ -605,14 +650,17 @@ detach(int pid)
 void
 priority(int prio){
     struct proc *curproc = myproc();
-    curproc->accumulator=prio;
+    curproc->priority=prio;
 }
 
 void
 policy(int num){
-    switch (num){
-        //TODO- need to think about it
-    }
+  //check legal input
+  //TODO- need to check if there is a need to change to default or to panic
+  if(num>3 || num<1)
+    currpolicy=88; //currpolicy get the default policy
+  else
+    currpolicy=num;
 }
 
 
