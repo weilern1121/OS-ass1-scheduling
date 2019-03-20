@@ -7,11 +7,11 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/weilern/os192/Assignment1/. 
+C_INCLUDES = -I/home/weilern/os192/ass1/OS-ass1-scheduling/. 
 
 CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/weilern/os192/Assignment1/. 
+CXX_INCLUDES = -I/home/weilern/os192/ass1/OS-ass1-scheduling/. 
 

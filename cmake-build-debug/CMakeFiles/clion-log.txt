@@ -1,4 +1,4 @@
-/opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/weilern/os192/Assignment1
+/opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/weilern/os192/ass1/OS-ass1-scheduling
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/weilern/os192/Assignment1/cmake-build-debug
+-- Build files have been written to: /home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug

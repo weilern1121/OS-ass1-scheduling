@@ -8,33 +8,33 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/weilern/os192/Assignment1/cmake-build-debug"/>
+				<Option working_dir="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/weilern/os192/Assignment1/cmake-build-debug"/>
+				<Option working_dir="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Assignment1">
-				<Option output="/home/weilern/os192/Assignment1/cmake-build-debug/Assignment1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/weilern/os192/Assignment1/cmake-build-debug"/>
+				<Option output="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Assignment1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/weilern/os192/Assignment1/."/>
+					<Add directory="/home/weilern/os192/ass1/OS-ass1-scheduling/."/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -45,20 +45,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment1"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment1"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Assignment1/fast">
-				<Option output="/home/weilern/os192/Assignment1/cmake-build-debug/Assignment1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/weilern/os192/Assignment1/cmake-build-debug"/>
+				<Option output="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Assignment1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/weilern/os192/Assignment1/."/>
+					<Add directory="/home/weilern/os192/ass1/OS-ass1-scheduling/."/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -69,237 +69,240 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment1/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment1/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/weilern/os192/Assignment1/cmake-build-debug"/>
+				<Option working_dir="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/Assignment1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/weilern/os192/Assignment1/asm.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/asm.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/ass1ds.cpp">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ass1ds.cpp">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/ass1ds.hpp">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ass1ds.hpp">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/bio.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/bio.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/bootmain.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/bootmain.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/buf.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/buf.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/cat.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/cat.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/console.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/console.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/date.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/date.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/defs.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/defs.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/echo.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/echo.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/elf.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/elf.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/exec.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/exec.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/fcntl.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/fcntl.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/file.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/file.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/file.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/file.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/forktest.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/forktest.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/fs.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/fs.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/fs.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/fs.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/grep.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/grep.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/ide.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ide.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/init.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/init.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/ioapic.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ioapic.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/kalloc.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/kalloc.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/kbd.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/kbd.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/kbd.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/kbd.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/kill.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/kill.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/lapic.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/lapic.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/ln.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ln.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/log.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/log.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/ls.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ls.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/main.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/main.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/memide.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/memide.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/memlayout.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/memlayout.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/mkdir.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/mkdir.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/mkfs.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/mkfs.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/mmu.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/mmu.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/mp.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/mp.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/mp.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/mp.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/param.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/param.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/picirq.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/picirq.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/pipe.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/pipe.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/printf.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/printf.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/proc.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/proc.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/proc.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/proc.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/rm.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/rm.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/schedulinginterface.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sanity.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/sh.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/schedulinginterface.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/sleeplock.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sh.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/sleeplock.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sleeplock.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/spinlock.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sleeplock.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/spinlock.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/spinlock.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/stat.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/spinlock.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/stressfs.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/stat.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/string.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/stressfs.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/syscall.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/string.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/syscall.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/syscall.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/sysfile.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/syscall.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/sysproc.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sysfile.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/tmp.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sysproc.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/trap.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/tmp.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/traps.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/trap.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/types.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/traps.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/uart.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/types.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/ulib.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/uart.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/umalloc.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ulib.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/user.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/umalloc.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/vm.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/user.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/wc.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/vm.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/x86.h">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/wc.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/zombie.c">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/x86.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/Assignment1/CMakeLists.txt">
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/zombie.c">
+			<Option target="Assignment1"/>
+		</Unit>
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

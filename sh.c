@@ -79,7 +79,7 @@ reverse_string( char *str )
 
 char*
 strconcat (const char *first, const char *second, char* dest){
-    //this func gets two strings and concated them into dest.
+    //This func gets two strings and concatted them into dest.
     //NOTE - dest is already MALLOCed before this function call.
     char* output=dest;
     while((*dest++ = *first++) != 0)
@@ -94,9 +94,9 @@ strconcat (const char *first, const char *second, char* dest){
 char*
 strcpyuntildelimiter(char *s, const char *t, char delim)
 {
-    //this func take a string(t) and make a copy
+    //This func take a string(t) and make a copy
     //of him into s until the end of t or delimiter.
-    //NOTE- the target string (i.e. s) is already MALLOCed before the function call
+    //NOTE- the target string (s) is already MALLOCed before the function call
     char *os;
 
     os = s;
@@ -136,7 +136,6 @@ execWithPath(char *path, char **argv)
     }
     free(curr_path);
     return -1;
-
 }
 
 // Execute cmd.  Never returns.
@@ -163,10 +162,7 @@ runcmd(struct cmd *cmd)
                 exit(0);
             exec(ecmd->argv[0], ecmd->argv);
             // from here
-
             execWithPath(ecmd->argv[0], ecmd->argv);
-
-
             // till here
             printf(2, "exec %s failed\n", ecmd->argv[0]);
             break;

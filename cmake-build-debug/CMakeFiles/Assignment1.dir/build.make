@@ -43,10 +43,10 @@ RM = /opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/weilern/os192/Assignment1
+CMAKE_SOURCE_DIR = /home/weilern/os192/ass1/OS-ass1-scheduling
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/weilern/os192/Assignment1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Assignment1.dir/depend.make
@@ -59,614 +59,627 @@ include CMakeFiles/Assignment1.dir/flags.make
 
 CMakeFiles/Assignment1.dir/ass1ds.cpp.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/ass1ds.cpp.o: ../ass1ds.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Assignment1.dir/ass1ds.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/ass1ds.cpp.o -c /home/weilern/os192/Assignment1/ass1ds.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Assignment1.dir/ass1ds.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment1.dir/ass1ds.cpp.o -c /home/weilern/os192/ass1/OS-ass1-scheduling/ass1ds.cpp
 
 CMakeFiles/Assignment1.dir/ass1ds.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment1.dir/ass1ds.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/weilern/os192/Assignment1/ass1ds.cpp > CMakeFiles/Assignment1.dir/ass1ds.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/ass1ds.cpp > CMakeFiles/Assignment1.dir/ass1ds.cpp.i
 
 CMakeFiles/Assignment1.dir/ass1ds.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment1.dir/ass1ds.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/weilern/os192/Assignment1/ass1ds.cpp -o CMakeFiles/Assignment1.dir/ass1ds.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/ass1ds.cpp -o CMakeFiles/Assignment1.dir/ass1ds.cpp.s
 
 CMakeFiles/Assignment1.dir/bio.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/bio.c.o: ../bio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Assignment1.dir/bio.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/bio.c.o   -c /home/weilern/os192/Assignment1/bio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Assignment1.dir/bio.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/bio.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/bio.c
 
 CMakeFiles/Assignment1.dir/bio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/bio.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/bio.c > CMakeFiles/Assignment1.dir/bio.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/bio.c > CMakeFiles/Assignment1.dir/bio.c.i
 
 CMakeFiles/Assignment1.dir/bio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/bio.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/bio.c -o CMakeFiles/Assignment1.dir/bio.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/bio.c -o CMakeFiles/Assignment1.dir/bio.c.s
 
 CMakeFiles/Assignment1.dir/bootmain.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/bootmain.c.o: ../bootmain.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Assignment1.dir/bootmain.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/bootmain.c.o   -c /home/weilern/os192/Assignment1/bootmain.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Assignment1.dir/bootmain.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/bootmain.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/bootmain.c
 
 CMakeFiles/Assignment1.dir/bootmain.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/bootmain.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/bootmain.c > CMakeFiles/Assignment1.dir/bootmain.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/bootmain.c > CMakeFiles/Assignment1.dir/bootmain.c.i
 
 CMakeFiles/Assignment1.dir/bootmain.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/bootmain.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/bootmain.c -o CMakeFiles/Assignment1.dir/bootmain.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/bootmain.c -o CMakeFiles/Assignment1.dir/bootmain.c.s
 
 CMakeFiles/Assignment1.dir/cat.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/cat.c.o: ../cat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Assignment1.dir/cat.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/cat.c.o   -c /home/weilern/os192/Assignment1/cat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Assignment1.dir/cat.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/cat.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/cat.c
 
 CMakeFiles/Assignment1.dir/cat.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/cat.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/cat.c > CMakeFiles/Assignment1.dir/cat.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/cat.c > CMakeFiles/Assignment1.dir/cat.c.i
 
 CMakeFiles/Assignment1.dir/cat.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/cat.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/cat.c -o CMakeFiles/Assignment1.dir/cat.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/cat.c -o CMakeFiles/Assignment1.dir/cat.c.s
 
 CMakeFiles/Assignment1.dir/console.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/console.c.o: ../console.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Assignment1.dir/console.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/console.c.o   -c /home/weilern/os192/Assignment1/console.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Assignment1.dir/console.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/console.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/console.c
 
 CMakeFiles/Assignment1.dir/console.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/console.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/console.c > CMakeFiles/Assignment1.dir/console.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/console.c > CMakeFiles/Assignment1.dir/console.c.i
 
 CMakeFiles/Assignment1.dir/console.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/console.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/console.c -o CMakeFiles/Assignment1.dir/console.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/console.c -o CMakeFiles/Assignment1.dir/console.c.s
 
 CMakeFiles/Assignment1.dir/echo.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/echo.c.o: ../echo.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Assignment1.dir/echo.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/echo.c.o   -c /home/weilern/os192/Assignment1/echo.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Assignment1.dir/echo.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/echo.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/echo.c
 
 CMakeFiles/Assignment1.dir/echo.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/echo.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/echo.c > CMakeFiles/Assignment1.dir/echo.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/echo.c > CMakeFiles/Assignment1.dir/echo.c.i
 
 CMakeFiles/Assignment1.dir/echo.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/echo.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/echo.c -o CMakeFiles/Assignment1.dir/echo.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/echo.c -o CMakeFiles/Assignment1.dir/echo.c.s
 
 CMakeFiles/Assignment1.dir/exec.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/exec.c.o: ../exec.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Assignment1.dir/exec.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/exec.c.o   -c /home/weilern/os192/Assignment1/exec.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Assignment1.dir/exec.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/exec.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/exec.c
 
 CMakeFiles/Assignment1.dir/exec.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/exec.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/exec.c > CMakeFiles/Assignment1.dir/exec.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/exec.c > CMakeFiles/Assignment1.dir/exec.c.i
 
 CMakeFiles/Assignment1.dir/exec.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/exec.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/exec.c -o CMakeFiles/Assignment1.dir/exec.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/exec.c -o CMakeFiles/Assignment1.dir/exec.c.s
 
 CMakeFiles/Assignment1.dir/file.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/file.c.o: ../file.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Assignment1.dir/file.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/file.c.o   -c /home/weilern/os192/Assignment1/file.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Assignment1.dir/file.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/file.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/file.c
 
 CMakeFiles/Assignment1.dir/file.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/file.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/file.c > CMakeFiles/Assignment1.dir/file.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/file.c > CMakeFiles/Assignment1.dir/file.c.i
 
 CMakeFiles/Assignment1.dir/file.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/file.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/file.c -o CMakeFiles/Assignment1.dir/file.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/file.c -o CMakeFiles/Assignment1.dir/file.c.s
 
 CMakeFiles/Assignment1.dir/forktest.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/forktest.c.o: ../forktest.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Assignment1.dir/forktest.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/forktest.c.o   -c /home/weilern/os192/Assignment1/forktest.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Assignment1.dir/forktest.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/forktest.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/forktest.c
 
 CMakeFiles/Assignment1.dir/forktest.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/forktest.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/forktest.c > CMakeFiles/Assignment1.dir/forktest.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/forktest.c > CMakeFiles/Assignment1.dir/forktest.c.i
 
 CMakeFiles/Assignment1.dir/forktest.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/forktest.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/forktest.c -o CMakeFiles/Assignment1.dir/forktest.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/forktest.c -o CMakeFiles/Assignment1.dir/forktest.c.s
 
 CMakeFiles/Assignment1.dir/fs.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/fs.c.o: ../fs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Assignment1.dir/fs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/fs.c.o   -c /home/weilern/os192/Assignment1/fs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Assignment1.dir/fs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/fs.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/fs.c
 
 CMakeFiles/Assignment1.dir/fs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/fs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/fs.c > CMakeFiles/Assignment1.dir/fs.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/fs.c > CMakeFiles/Assignment1.dir/fs.c.i
 
 CMakeFiles/Assignment1.dir/fs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/fs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/fs.c -o CMakeFiles/Assignment1.dir/fs.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/fs.c -o CMakeFiles/Assignment1.dir/fs.c.s
 
 CMakeFiles/Assignment1.dir/grep.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/grep.c.o: ../grep.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Assignment1.dir/grep.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/grep.c.o   -c /home/weilern/os192/Assignment1/grep.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Assignment1.dir/grep.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/grep.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/grep.c
 
 CMakeFiles/Assignment1.dir/grep.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/grep.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/grep.c > CMakeFiles/Assignment1.dir/grep.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/grep.c > CMakeFiles/Assignment1.dir/grep.c.i
 
 CMakeFiles/Assignment1.dir/grep.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/grep.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/grep.c -o CMakeFiles/Assignment1.dir/grep.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/grep.c -o CMakeFiles/Assignment1.dir/grep.c.s
 
 CMakeFiles/Assignment1.dir/ide.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/ide.c.o: ../ide.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Assignment1.dir/ide.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/ide.c.o   -c /home/weilern/os192/Assignment1/ide.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Assignment1.dir/ide.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/ide.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/ide.c
 
 CMakeFiles/Assignment1.dir/ide.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/ide.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/ide.c > CMakeFiles/Assignment1.dir/ide.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/ide.c > CMakeFiles/Assignment1.dir/ide.c.i
 
 CMakeFiles/Assignment1.dir/ide.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/ide.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/ide.c -o CMakeFiles/Assignment1.dir/ide.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/ide.c -o CMakeFiles/Assignment1.dir/ide.c.s
 
 CMakeFiles/Assignment1.dir/init.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/init.c.o: ../init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Assignment1.dir/init.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/init.c.o   -c /home/weilern/os192/Assignment1/init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Assignment1.dir/init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/init.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/init.c
 
 CMakeFiles/Assignment1.dir/init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/init.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/init.c > CMakeFiles/Assignment1.dir/init.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/init.c > CMakeFiles/Assignment1.dir/init.c.i
 
 CMakeFiles/Assignment1.dir/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/init.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/init.c -o CMakeFiles/Assignment1.dir/init.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/init.c -o CMakeFiles/Assignment1.dir/init.c.s
 
 CMakeFiles/Assignment1.dir/ioapic.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/ioapic.c.o: ../ioapic.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Assignment1.dir/ioapic.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/ioapic.c.o   -c /home/weilern/os192/Assignment1/ioapic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Assignment1.dir/ioapic.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/ioapic.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/ioapic.c
 
 CMakeFiles/Assignment1.dir/ioapic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/ioapic.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/ioapic.c > CMakeFiles/Assignment1.dir/ioapic.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/ioapic.c > CMakeFiles/Assignment1.dir/ioapic.c.i
 
 CMakeFiles/Assignment1.dir/ioapic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/ioapic.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/ioapic.c -o CMakeFiles/Assignment1.dir/ioapic.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/ioapic.c -o CMakeFiles/Assignment1.dir/ioapic.c.s
 
 CMakeFiles/Assignment1.dir/kalloc.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/kalloc.c.o: ../kalloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Assignment1.dir/kalloc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/kalloc.c.o   -c /home/weilern/os192/Assignment1/kalloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Assignment1.dir/kalloc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/kalloc.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/kalloc.c
 
 CMakeFiles/Assignment1.dir/kalloc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/kalloc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/kalloc.c > CMakeFiles/Assignment1.dir/kalloc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/kalloc.c > CMakeFiles/Assignment1.dir/kalloc.c.i
 
 CMakeFiles/Assignment1.dir/kalloc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/kalloc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/kalloc.c -o CMakeFiles/Assignment1.dir/kalloc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/kalloc.c -o CMakeFiles/Assignment1.dir/kalloc.c.s
 
 CMakeFiles/Assignment1.dir/kbd.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/kbd.c.o: ../kbd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Assignment1.dir/kbd.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/kbd.c.o   -c /home/weilern/os192/Assignment1/kbd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Assignment1.dir/kbd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/kbd.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/kbd.c
 
 CMakeFiles/Assignment1.dir/kbd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/kbd.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/kbd.c > CMakeFiles/Assignment1.dir/kbd.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/kbd.c > CMakeFiles/Assignment1.dir/kbd.c.i
 
 CMakeFiles/Assignment1.dir/kbd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/kbd.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/kbd.c -o CMakeFiles/Assignment1.dir/kbd.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/kbd.c -o CMakeFiles/Assignment1.dir/kbd.c.s
 
 CMakeFiles/Assignment1.dir/kill.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/kill.c.o: ../kill.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Assignment1.dir/kill.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/kill.c.o   -c /home/weilern/os192/Assignment1/kill.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Assignment1.dir/kill.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/kill.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/kill.c
 
 CMakeFiles/Assignment1.dir/kill.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/kill.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/kill.c > CMakeFiles/Assignment1.dir/kill.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/kill.c > CMakeFiles/Assignment1.dir/kill.c.i
 
 CMakeFiles/Assignment1.dir/kill.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/kill.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/kill.c -o CMakeFiles/Assignment1.dir/kill.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/kill.c -o CMakeFiles/Assignment1.dir/kill.c.s
 
 CMakeFiles/Assignment1.dir/lapic.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/lapic.c.o: ../lapic.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Assignment1.dir/lapic.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/lapic.c.o   -c /home/weilern/os192/Assignment1/lapic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Assignment1.dir/lapic.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/lapic.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/lapic.c
 
 CMakeFiles/Assignment1.dir/lapic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/lapic.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/lapic.c > CMakeFiles/Assignment1.dir/lapic.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/lapic.c > CMakeFiles/Assignment1.dir/lapic.c.i
 
 CMakeFiles/Assignment1.dir/lapic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/lapic.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/lapic.c -o CMakeFiles/Assignment1.dir/lapic.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/lapic.c -o CMakeFiles/Assignment1.dir/lapic.c.s
 
 CMakeFiles/Assignment1.dir/ln.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/ln.c.o: ../ln.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Assignment1.dir/ln.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/ln.c.o   -c /home/weilern/os192/Assignment1/ln.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Assignment1.dir/ln.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/ln.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/ln.c
 
 CMakeFiles/Assignment1.dir/ln.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/ln.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/ln.c > CMakeFiles/Assignment1.dir/ln.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/ln.c > CMakeFiles/Assignment1.dir/ln.c.i
 
 CMakeFiles/Assignment1.dir/ln.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/ln.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/ln.c -o CMakeFiles/Assignment1.dir/ln.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/ln.c -o CMakeFiles/Assignment1.dir/ln.c.s
 
 CMakeFiles/Assignment1.dir/log.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/log.c.o: ../log.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Assignment1.dir/log.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/log.c.o   -c /home/weilern/os192/Assignment1/log.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Assignment1.dir/log.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/log.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/log.c
 
 CMakeFiles/Assignment1.dir/log.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/log.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/log.c > CMakeFiles/Assignment1.dir/log.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/log.c > CMakeFiles/Assignment1.dir/log.c.i
 
 CMakeFiles/Assignment1.dir/log.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/log.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/log.c -o CMakeFiles/Assignment1.dir/log.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/log.c -o CMakeFiles/Assignment1.dir/log.c.s
 
 CMakeFiles/Assignment1.dir/ls.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/ls.c.o: ../ls.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Assignment1.dir/ls.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/ls.c.o   -c /home/weilern/os192/Assignment1/ls.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Assignment1.dir/ls.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/ls.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/ls.c
 
 CMakeFiles/Assignment1.dir/ls.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/ls.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/ls.c > CMakeFiles/Assignment1.dir/ls.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/ls.c > CMakeFiles/Assignment1.dir/ls.c.i
 
 CMakeFiles/Assignment1.dir/ls.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/ls.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/ls.c -o CMakeFiles/Assignment1.dir/ls.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/ls.c -o CMakeFiles/Assignment1.dir/ls.c.s
 
 CMakeFiles/Assignment1.dir/main.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/Assignment1.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/main.c.o   -c /home/weilern/os192/Assignment1/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/Assignment1.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/main.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/main.c
 
 CMakeFiles/Assignment1.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/main.c > CMakeFiles/Assignment1.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/main.c > CMakeFiles/Assignment1.dir/main.c.i
 
 CMakeFiles/Assignment1.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/main.c -o CMakeFiles/Assignment1.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/main.c -o CMakeFiles/Assignment1.dir/main.c.s
 
 CMakeFiles/Assignment1.dir/memide.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/memide.c.o: ../memide.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/Assignment1.dir/memide.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/memide.c.o   -c /home/weilern/os192/Assignment1/memide.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/Assignment1.dir/memide.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/memide.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/memide.c
 
 CMakeFiles/Assignment1.dir/memide.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/memide.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/memide.c > CMakeFiles/Assignment1.dir/memide.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/memide.c > CMakeFiles/Assignment1.dir/memide.c.i
 
 CMakeFiles/Assignment1.dir/memide.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/memide.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/memide.c -o CMakeFiles/Assignment1.dir/memide.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/memide.c -o CMakeFiles/Assignment1.dir/memide.c.s
 
 CMakeFiles/Assignment1.dir/mkdir.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/mkdir.c.o: ../mkdir.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Assignment1.dir/mkdir.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/mkdir.c.o   -c /home/weilern/os192/Assignment1/mkdir.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Assignment1.dir/mkdir.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/mkdir.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/mkdir.c
 
 CMakeFiles/Assignment1.dir/mkdir.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/mkdir.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/mkdir.c > CMakeFiles/Assignment1.dir/mkdir.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/mkdir.c > CMakeFiles/Assignment1.dir/mkdir.c.i
 
 CMakeFiles/Assignment1.dir/mkdir.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/mkdir.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/mkdir.c -o CMakeFiles/Assignment1.dir/mkdir.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/mkdir.c -o CMakeFiles/Assignment1.dir/mkdir.c.s
 
 CMakeFiles/Assignment1.dir/mkfs.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/mkfs.c.o: ../mkfs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/Assignment1.dir/mkfs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/mkfs.c.o   -c /home/weilern/os192/Assignment1/mkfs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/Assignment1.dir/mkfs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/mkfs.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/mkfs.c
 
 CMakeFiles/Assignment1.dir/mkfs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/mkfs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/mkfs.c > CMakeFiles/Assignment1.dir/mkfs.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/mkfs.c > CMakeFiles/Assignment1.dir/mkfs.c.i
 
 CMakeFiles/Assignment1.dir/mkfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/mkfs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/mkfs.c -o CMakeFiles/Assignment1.dir/mkfs.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/mkfs.c -o CMakeFiles/Assignment1.dir/mkfs.c.s
 
 CMakeFiles/Assignment1.dir/mp.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/mp.c.o: ../mp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/Assignment1.dir/mp.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/mp.c.o   -c /home/weilern/os192/Assignment1/mp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/Assignment1.dir/mp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/mp.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/mp.c
 
 CMakeFiles/Assignment1.dir/mp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/mp.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/mp.c > CMakeFiles/Assignment1.dir/mp.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/mp.c > CMakeFiles/Assignment1.dir/mp.c.i
 
 CMakeFiles/Assignment1.dir/mp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/mp.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/mp.c -o CMakeFiles/Assignment1.dir/mp.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/mp.c -o CMakeFiles/Assignment1.dir/mp.c.s
 
 CMakeFiles/Assignment1.dir/picirq.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/picirq.c.o: ../picirq.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/Assignment1.dir/picirq.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/picirq.c.o   -c /home/weilern/os192/Assignment1/picirq.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/Assignment1.dir/picirq.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/picirq.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/picirq.c
 
 CMakeFiles/Assignment1.dir/picirq.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/picirq.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/picirq.c > CMakeFiles/Assignment1.dir/picirq.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/picirq.c > CMakeFiles/Assignment1.dir/picirq.c.i
 
 CMakeFiles/Assignment1.dir/picirq.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/picirq.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/picirq.c -o CMakeFiles/Assignment1.dir/picirq.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/picirq.c -o CMakeFiles/Assignment1.dir/picirq.c.s
 
 CMakeFiles/Assignment1.dir/pipe.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/pipe.c.o: ../pipe.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/Assignment1.dir/pipe.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/pipe.c.o   -c /home/weilern/os192/Assignment1/pipe.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/Assignment1.dir/pipe.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/pipe.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/pipe.c
 
 CMakeFiles/Assignment1.dir/pipe.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/pipe.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/pipe.c > CMakeFiles/Assignment1.dir/pipe.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/pipe.c > CMakeFiles/Assignment1.dir/pipe.c.i
 
 CMakeFiles/Assignment1.dir/pipe.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/pipe.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/pipe.c -o CMakeFiles/Assignment1.dir/pipe.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/pipe.c -o CMakeFiles/Assignment1.dir/pipe.c.s
 
 CMakeFiles/Assignment1.dir/printf.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/printf.c.o: ../printf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/Assignment1.dir/printf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/printf.c.o   -c /home/weilern/os192/Assignment1/printf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/Assignment1.dir/printf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/printf.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/printf.c
 
 CMakeFiles/Assignment1.dir/printf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/printf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/printf.c > CMakeFiles/Assignment1.dir/printf.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/printf.c > CMakeFiles/Assignment1.dir/printf.c.i
 
 CMakeFiles/Assignment1.dir/printf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/printf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/printf.c -o CMakeFiles/Assignment1.dir/printf.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/printf.c -o CMakeFiles/Assignment1.dir/printf.c.s
 
 CMakeFiles/Assignment1.dir/proc.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/proc.c.o: ../proc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/Assignment1.dir/proc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/proc.c.o   -c /home/weilern/os192/Assignment1/proc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/Assignment1.dir/proc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/proc.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/proc.c
 
 CMakeFiles/Assignment1.dir/proc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/proc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/proc.c > CMakeFiles/Assignment1.dir/proc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/proc.c > CMakeFiles/Assignment1.dir/proc.c.i
 
 CMakeFiles/Assignment1.dir/proc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/proc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/proc.c -o CMakeFiles/Assignment1.dir/proc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/proc.c -o CMakeFiles/Assignment1.dir/proc.c.s
 
 CMakeFiles/Assignment1.dir/rm.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/rm.c.o: ../rm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/Assignment1.dir/rm.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/rm.c.o   -c /home/weilern/os192/Assignment1/rm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/Assignment1.dir/rm.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/rm.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/rm.c
 
 CMakeFiles/Assignment1.dir/rm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/rm.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/rm.c > CMakeFiles/Assignment1.dir/rm.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/rm.c > CMakeFiles/Assignment1.dir/rm.c.i
 
 CMakeFiles/Assignment1.dir/rm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/rm.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/rm.c -o CMakeFiles/Assignment1.dir/rm.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/rm.c -o CMakeFiles/Assignment1.dir/rm.c.s
 
 CMakeFiles/Assignment1.dir/sh.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/sh.c.o: ../sh.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/Assignment1.dir/sh.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/sh.c.o   -c /home/weilern/os192/Assignment1/sh.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/Assignment1.dir/sh.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/sh.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/sh.c
 
 CMakeFiles/Assignment1.dir/sh.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/sh.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/sh.c > CMakeFiles/Assignment1.dir/sh.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/sh.c > CMakeFiles/Assignment1.dir/sh.c.i
 
 CMakeFiles/Assignment1.dir/sh.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/sh.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/sh.c -o CMakeFiles/Assignment1.dir/sh.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/sh.c -o CMakeFiles/Assignment1.dir/sh.c.s
 
 CMakeFiles/Assignment1.dir/sleeplock.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/sleeplock.c.o: ../sleeplock.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/Assignment1.dir/sleeplock.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/sleeplock.c.o   -c /home/weilern/os192/Assignment1/sleeplock.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/Assignment1.dir/sleeplock.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/sleeplock.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/sleeplock.c
 
 CMakeFiles/Assignment1.dir/sleeplock.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/sleeplock.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/sleeplock.c > CMakeFiles/Assignment1.dir/sleeplock.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/sleeplock.c > CMakeFiles/Assignment1.dir/sleeplock.c.i
 
 CMakeFiles/Assignment1.dir/sleeplock.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/sleeplock.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/sleeplock.c -o CMakeFiles/Assignment1.dir/sleeplock.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/sleeplock.c -o CMakeFiles/Assignment1.dir/sleeplock.c.s
 
 CMakeFiles/Assignment1.dir/spinlock.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/spinlock.c.o: ../spinlock.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/Assignment1.dir/spinlock.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/spinlock.c.o   -c /home/weilern/os192/Assignment1/spinlock.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/Assignment1.dir/spinlock.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/spinlock.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/spinlock.c
 
 CMakeFiles/Assignment1.dir/spinlock.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/spinlock.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/spinlock.c > CMakeFiles/Assignment1.dir/spinlock.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/spinlock.c > CMakeFiles/Assignment1.dir/spinlock.c.i
 
 CMakeFiles/Assignment1.dir/spinlock.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/spinlock.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/spinlock.c -o CMakeFiles/Assignment1.dir/spinlock.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/spinlock.c -o CMakeFiles/Assignment1.dir/spinlock.c.s
 
 CMakeFiles/Assignment1.dir/stressfs.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/stressfs.c.o: ../stressfs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/Assignment1.dir/stressfs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/stressfs.c.o   -c /home/weilern/os192/Assignment1/stressfs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/Assignment1.dir/stressfs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/stressfs.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/stressfs.c
 
 CMakeFiles/Assignment1.dir/stressfs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/stressfs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/stressfs.c > CMakeFiles/Assignment1.dir/stressfs.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/stressfs.c > CMakeFiles/Assignment1.dir/stressfs.c.i
 
 CMakeFiles/Assignment1.dir/stressfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/stressfs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/stressfs.c -o CMakeFiles/Assignment1.dir/stressfs.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/stressfs.c -o CMakeFiles/Assignment1.dir/stressfs.c.s
 
 CMakeFiles/Assignment1.dir/string.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/string.c.o: ../string.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/Assignment1.dir/string.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/string.c.o   -c /home/weilern/os192/Assignment1/string.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/Assignment1.dir/string.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/string.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/string.c
 
 CMakeFiles/Assignment1.dir/string.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/string.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/string.c > CMakeFiles/Assignment1.dir/string.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/string.c > CMakeFiles/Assignment1.dir/string.c.i
 
 CMakeFiles/Assignment1.dir/string.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/string.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/string.c -o CMakeFiles/Assignment1.dir/string.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/string.c -o CMakeFiles/Assignment1.dir/string.c.s
 
 CMakeFiles/Assignment1.dir/syscall.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/syscall.c.o: ../syscall.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/Assignment1.dir/syscall.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/syscall.c.o   -c /home/weilern/os192/Assignment1/syscall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/Assignment1.dir/syscall.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/syscall.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/syscall.c
 
 CMakeFiles/Assignment1.dir/syscall.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/syscall.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/syscall.c > CMakeFiles/Assignment1.dir/syscall.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/syscall.c > CMakeFiles/Assignment1.dir/syscall.c.i
 
 CMakeFiles/Assignment1.dir/syscall.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/syscall.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/syscall.c -o CMakeFiles/Assignment1.dir/syscall.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/syscall.c -o CMakeFiles/Assignment1.dir/syscall.c.s
 
 CMakeFiles/Assignment1.dir/sysfile.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/sysfile.c.o: ../sysfile.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/Assignment1.dir/sysfile.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/sysfile.c.o   -c /home/weilern/os192/Assignment1/sysfile.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/Assignment1.dir/sysfile.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/sysfile.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/sysfile.c
 
 CMakeFiles/Assignment1.dir/sysfile.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/sysfile.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/sysfile.c > CMakeFiles/Assignment1.dir/sysfile.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/sysfile.c > CMakeFiles/Assignment1.dir/sysfile.c.i
 
 CMakeFiles/Assignment1.dir/sysfile.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/sysfile.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/sysfile.c -o CMakeFiles/Assignment1.dir/sysfile.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/sysfile.c -o CMakeFiles/Assignment1.dir/sysfile.c.s
 
 CMakeFiles/Assignment1.dir/sysproc.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/sysproc.c.o: ../sysproc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/Assignment1.dir/sysproc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/sysproc.c.o   -c /home/weilern/os192/Assignment1/sysproc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/Assignment1.dir/sysproc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/sysproc.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/sysproc.c
 
 CMakeFiles/Assignment1.dir/sysproc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/sysproc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/sysproc.c > CMakeFiles/Assignment1.dir/sysproc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/sysproc.c > CMakeFiles/Assignment1.dir/sysproc.c.i
 
 CMakeFiles/Assignment1.dir/sysproc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/sysproc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/sysproc.c -o CMakeFiles/Assignment1.dir/sysproc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/sysproc.c -o CMakeFiles/Assignment1.dir/sysproc.c.s
 
 CMakeFiles/Assignment1.dir/trap.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/trap.c.o: ../trap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/Assignment1.dir/trap.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/trap.c.o   -c /home/weilern/os192/Assignment1/trap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/Assignment1.dir/trap.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/trap.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/trap.c
 
 CMakeFiles/Assignment1.dir/trap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/trap.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/trap.c > CMakeFiles/Assignment1.dir/trap.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/trap.c > CMakeFiles/Assignment1.dir/trap.c.i
 
 CMakeFiles/Assignment1.dir/trap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/trap.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/trap.c -o CMakeFiles/Assignment1.dir/trap.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/trap.c -o CMakeFiles/Assignment1.dir/trap.c.s
 
 CMakeFiles/Assignment1.dir/uart.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/uart.c.o: ../uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/Assignment1.dir/uart.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/uart.c.o   -c /home/weilern/os192/Assignment1/uart.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/Assignment1.dir/uart.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/uart.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/uart.c
 
 CMakeFiles/Assignment1.dir/uart.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/uart.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/uart.c > CMakeFiles/Assignment1.dir/uart.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/uart.c > CMakeFiles/Assignment1.dir/uart.c.i
 
 CMakeFiles/Assignment1.dir/uart.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/uart.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/uart.c -o CMakeFiles/Assignment1.dir/uart.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/uart.c -o CMakeFiles/Assignment1.dir/uart.c.s
 
 CMakeFiles/Assignment1.dir/ulib.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/ulib.c.o: ../ulib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/Assignment1.dir/ulib.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/ulib.c.o   -c /home/weilern/os192/Assignment1/ulib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/Assignment1.dir/ulib.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/ulib.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/ulib.c
 
 CMakeFiles/Assignment1.dir/ulib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/ulib.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/ulib.c > CMakeFiles/Assignment1.dir/ulib.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/ulib.c > CMakeFiles/Assignment1.dir/ulib.c.i
 
 CMakeFiles/Assignment1.dir/ulib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/ulib.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/ulib.c -o CMakeFiles/Assignment1.dir/ulib.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/ulib.c -o CMakeFiles/Assignment1.dir/ulib.c.s
 
 CMakeFiles/Assignment1.dir/umalloc.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/umalloc.c.o: ../umalloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/Assignment1.dir/umalloc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/umalloc.c.o   -c /home/weilern/os192/Assignment1/umalloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/Assignment1.dir/umalloc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/umalloc.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/umalloc.c
 
 CMakeFiles/Assignment1.dir/umalloc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/umalloc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/umalloc.c > CMakeFiles/Assignment1.dir/umalloc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/umalloc.c > CMakeFiles/Assignment1.dir/umalloc.c.i
 
 CMakeFiles/Assignment1.dir/umalloc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/umalloc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/umalloc.c -o CMakeFiles/Assignment1.dir/umalloc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/umalloc.c -o CMakeFiles/Assignment1.dir/umalloc.c.s
 
 CMakeFiles/Assignment1.dir/vm.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/vm.c.o: ../vm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/Assignment1.dir/vm.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/vm.c.o   -c /home/weilern/os192/Assignment1/vm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/Assignment1.dir/vm.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/vm.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/vm.c
 
 CMakeFiles/Assignment1.dir/vm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/vm.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/vm.c > CMakeFiles/Assignment1.dir/vm.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/vm.c > CMakeFiles/Assignment1.dir/vm.c.i
 
 CMakeFiles/Assignment1.dir/vm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/vm.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/vm.c -o CMakeFiles/Assignment1.dir/vm.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/vm.c -o CMakeFiles/Assignment1.dir/vm.c.s
 
 CMakeFiles/Assignment1.dir/wc.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/wc.c.o: ../wc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/Assignment1.dir/wc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/wc.c.o   -c /home/weilern/os192/Assignment1/wc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/Assignment1.dir/wc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/wc.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/wc.c
 
 CMakeFiles/Assignment1.dir/wc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/wc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/wc.c > CMakeFiles/Assignment1.dir/wc.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/wc.c > CMakeFiles/Assignment1.dir/wc.c.i
 
 CMakeFiles/Assignment1.dir/wc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/wc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/wc.c -o CMakeFiles/Assignment1.dir/wc.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/wc.c -o CMakeFiles/Assignment1.dir/wc.c.s
 
 CMakeFiles/Assignment1.dir/zombie.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/zombie.c.o: ../zombie.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/Assignment1.dir/zombie.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/zombie.c.o   -c /home/weilern/os192/Assignment1/zombie.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/Assignment1.dir/zombie.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/zombie.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/zombie.c
 
 CMakeFiles/Assignment1.dir/zombie.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/zombie.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/zombie.c > CMakeFiles/Assignment1.dir/zombie.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/zombie.c > CMakeFiles/Assignment1.dir/zombie.c.i
 
 CMakeFiles/Assignment1.dir/zombie.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/zombie.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/zombie.c -o CMakeFiles/Assignment1.dir/zombie.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/zombie.c -o CMakeFiles/Assignment1.dir/zombie.c.s
 
 CMakeFiles/Assignment1.dir/tmp.c.o: CMakeFiles/Assignment1.dir/flags.make
 CMakeFiles/Assignment1.dir/tmp.c.o: ../tmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/Assignment1.dir/tmp.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/tmp.c.o   -c /home/weilern/os192/Assignment1/tmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/Assignment1.dir/tmp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/tmp.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/tmp.c
 
 CMakeFiles/Assignment1.dir/tmp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/tmp.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/Assignment1/tmp.c > CMakeFiles/Assignment1.dir/tmp.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/tmp.c > CMakeFiles/Assignment1.dir/tmp.c.i
 
 CMakeFiles/Assignment1.dir/tmp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/tmp.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/Assignment1/tmp.c -o CMakeFiles/Assignment1.dir/tmp.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/tmp.c -o CMakeFiles/Assignment1.dir/tmp.c.s
+
+CMakeFiles/Assignment1.dir/sanity.c.o: CMakeFiles/Assignment1.dir/flags.make
+CMakeFiles/Assignment1.dir/sanity.c.o: ../sanity.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/Assignment1.dir/sanity.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment1.dir/sanity.c.o   -c /home/weilern/os192/ass1/OS-ass1-scheduling/sanity.c
+
+CMakeFiles/Assignment1.dir/sanity.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment1.dir/sanity.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/weilern/os192/ass1/OS-ass1-scheduling/sanity.c > CMakeFiles/Assignment1.dir/sanity.c.i
+
+CMakeFiles/Assignment1.dir/sanity.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment1.dir/sanity.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/weilern/os192/ass1/OS-ass1-scheduling/sanity.c -o CMakeFiles/Assignment1.dir/sanity.c.s
 
 # Object files for target Assignment1
 Assignment1_OBJECTS = \
@@ -716,7 +729,8 @@ Assignment1_OBJECTS = \
 "CMakeFiles/Assignment1.dir/vm.c.o" \
 "CMakeFiles/Assignment1.dir/wc.c.o" \
 "CMakeFiles/Assignment1.dir/zombie.c.o" \
-"CMakeFiles/Assignment1.dir/tmp.c.o"
+"CMakeFiles/Assignment1.dir/tmp.c.o" \
+"CMakeFiles/Assignment1.dir/sanity.c.o"
 
 # External object files for target Assignment1
 Assignment1_EXTERNAL_OBJECTS =
@@ -768,9 +782,10 @@ Assignment1: CMakeFiles/Assignment1.dir/vm.c.o
 Assignment1: CMakeFiles/Assignment1.dir/wc.c.o
 Assignment1: CMakeFiles/Assignment1.dir/zombie.c.o
 Assignment1: CMakeFiles/Assignment1.dir/tmp.c.o
+Assignment1: CMakeFiles/Assignment1.dir/sanity.c.o
 Assignment1: CMakeFiles/Assignment1.dir/build.make
 Assignment1: CMakeFiles/Assignment1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Linking CXX executable Assignment1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Linking CXX executable Assignment1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Assignment1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -783,6 +798,6 @@ CMakeFiles/Assignment1.dir/clean:
 .PHONY : CMakeFiles/Assignment1.dir/clean
 
 CMakeFiles/Assignment1.dir/depend:
-	cd /home/weilern/os192/Assignment1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/weilern/os192/Assignment1 /home/weilern/os192/Assignment1 /home/weilern/os192/Assignment1/cmake-build-debug /home/weilern/os192/Assignment1/cmake-build-debug /home/weilern/os192/Assignment1/cmake-build-debug/CMakeFiles/Assignment1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/weilern/os192/ass1/OS-ass1-scheduling /home/weilern/os192/ass1/OS-ass1-scheduling /home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug /home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug /home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles/Assignment1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Assignment1.dir/depend
 

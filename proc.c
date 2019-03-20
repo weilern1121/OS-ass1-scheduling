@@ -310,8 +310,9 @@ wait(int *status)
         p->killed = 0;
         p->state = UNUSED;
         //TODO - maybe need to use argptr
-        if(status!=null)
-          p->exit_status= (int)status ;
+        //if(status!=null)
+          //if(argptr())
+        p->exit_status = (int)status ;
         release(&ptable.lock);
         return pid;
       }
