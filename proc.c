@@ -18,13 +18,20 @@ long long getAccumulator(struct proc *p) {
 
 long long getMinAccumulator(){
   long long tmp1=999999999999999,tmp2=999999999999999;
-  if(!pq.isEmpty())
-    pq.getMinAccumulator(&tmp1);
-  if(!rpholder.isEmpty())
-    rpholder.getMinAccumulator(&tmp2);
-  if(tmp1<tmp2)
-    return tmp1;
-  return tmp2;
+  boolean a=pq.getMinAccumulator(&tmp1);
+  boolean b=rpholder.getMinAccumulator(&tmp2);
+  if(a&&b){
+      if(tmp1<tmp2)
+          return tmp1;
+      return tmp2;
+  }
+  else{
+      if(a)
+          return tmp1;
+      else
+          return tmp2;
+  }
+
 }
 
 struct {
@@ -40,7 +47,17 @@ extern void trapret(void);
 
 static void wakeup1(void *chan);
 //TODO- addition
-int currpolicy=88;
+int currpolicy=2;
+
+
+
+
+
+
+
+
+
+
 
 void
 pinit(void)
@@ -86,6 +103,22 @@ myproc(void) {
   popcli();
   return p;
 }
+
+void
+pushToSpecificQueue(struct proc* p) {
+    switch (currpolicy) {
+        case 1://roundrobin addition
+            rrq.enqueue(p);
+            break;
+        case 2:    //priority queue addition
+            //myproc()->accumulator += myproc()->priority;
+            pq.put(p);
+            break;
+        default:
+            break;
+    }
+}
+
 
 //PAGEBREAK: 32
 // Look in the process table for an UNUSED proc.
@@ -172,11 +205,13 @@ userinit(void)
 
   p->state = RUNNABLE;
     //TODO- roundrobin addition
-  rrq.enqueue(p);
+  if(currpolicy==1)
+    rrq.enqueue(p);
   //TODO- priority queue addition
   p->priority=5;
-  p->accumulator=0; //is curely 0 because this is the first initialized procces
-  pq.put(p);
+  p->accumulator=0; //is surely 0 because this is the first initialized process
+  if(currpolicy==2)
+    pq.put(p);
 
   release(&ptable.lock);
 }
@@ -244,16 +279,17 @@ fork(void)
 
   np->state = RUNNABLE;
     //TODO- roundrobin addition
-  rrq.enqueue(np);
+  //rrq.enqueue(np);
   //TODO - priority addition
   np->priority=5;
   //check if this is the only procces
-  if(pq.isEmpty()) //if so -> acc=0
+  if(pq.isEmpty()&&rpholder.isEmpty()) //if the only process -> acc=0
     np->accumulator=0;
   else //there are more than 1 procces -> change acc value to min
     np->accumulator=getMinAccumulator();
   //add np (i.e currproc) to the priority queue
-  pq.put(np);
+  //pq.put(np);
+  pushToSpecificQueue(np);
 
   release(&ptable.lock);
 
@@ -383,8 +419,8 @@ scheduler(void)
     //policies cases - depends on the global variable currpolicy
     switch (currpolicy) {
         case 1: //round robin policy
-            if (!pq.isEmpty()) {
-                p = pq.extractMin();
+            if (!rrq.isEmpty()) {
+                p = rrq.dequeue();
                 if (p != null) {
                     // Switch to chosen process.  It is the process's job
                     // to release ptable.lock and then reacquire it
@@ -576,10 +612,11 @@ wakeup1(void *chan)
     if(p->state == SLEEPING && p->chan == chan){
         p->state = RUNNABLE;
         //TODO- roundrobin addition
-        rrq.enqueue(p);
+        //rrq.enqueue(p);
         //TODO- priority queue addition
         p->accumulator+=p->priority;
-        pq.put(p);
+        //pq.put(p);
+        pushToSpecificQueue(p);
     }
 }
 
@@ -608,10 +645,11 @@ kill(int pid)
       if(p->state == SLEEPING){
           p->state = RUNNABLE;
           //TODO- roundrobin addition
-          rrq.enqueue(p);
+          //rrq.enqueue(p);
           //TODO- priority queue addition
           p->accumulator+=p->priority;
-          pq.put(p);
+          //pq.put(p);
+          pushToSpecificQueue(p);
       }
       release(&ptable.lock);
       return 0;
