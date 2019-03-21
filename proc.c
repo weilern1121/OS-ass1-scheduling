@@ -17,7 +17,7 @@ long long getAccumulator(struct proc *p) {
 }
 
 long long getMinAccumulator(){
-  long long tmp1=99999,tmp2=99999;
+  long long tmp1=999999999999999,tmp2=999999999999999;
   if(!pq.isEmpty())
     pq.getMinAccumulator(&tmp1);
   if(!rpholder.isEmpty())
@@ -174,6 +174,8 @@ userinit(void)
     //TODO- roundrobin addition
   rrq.enqueue(p);
   //TODO- priority queue addition
+  p->priority=5;
+  p->accumulator=0; //is curely 0 because this is the first initialized procces
   pq.put(p);
 
   release(&ptable.lock);
@@ -249,7 +251,7 @@ fork(void)
   if(pq.isEmpty()) //if so -> acc=0
     np->accumulator=0;
   else //there are more than 1 procces -> change acc value to min
-    pq.getMinAccumulator(&np->accumulator);
+    np->accumulator=getMinAccumulator();
   //add np (i.e currproc) to the priority queue
   pq.put(np);
 
@@ -576,6 +578,7 @@ wakeup1(void *chan)
         //TODO- roundrobin addition
         rrq.enqueue(p);
         //TODO- priority queue addition
+        p->accumulator+=p->priority;
         pq.put(p);
     }
 }
@@ -607,6 +610,7 @@ kill(int pid)
           //TODO- roundrobin addition
           rrq.enqueue(p);
           //TODO- priority queue addition
+          p->accumulator+=p->priority;
           pq.put(p);
       }
       release(&ptable.lock);
