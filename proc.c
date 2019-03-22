@@ -463,6 +463,51 @@ scheduler(void)
                 }
             }
             break;
+	    // TODO we must consider case where we want to add another int wating time
+            // that counts time between running periods or just use the max total waiting time
+            //of all process.
+
+        case 3: //3.3 - priority scheduling
+            if (!pq.isEmpty()) {
+                if( counter % 100 == 0)
+                {
+                    int max = 0;
+
+                    for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+                        if ((p->state == RUNNABLE) && (p->perf.retime + p->perf.stime > max)){
+                            max = p->perf.retime + p->perf.stime;
+                            max_p = *p;
+                        }
+                    }
+
+                    p = &max_p;
+
+
+                }
+                else {
+                    p = pq.extractMin();
+                }
+                if (p != null) {
+                    // Switch to chosen process.  It is the process's job
+                    // to release ptable.lock and then reacquire it
+                    // before jumping back to us.
+                    c->proc = p;
+                    switchuvm(p);
+                    p->state = RUNNING;
+                    //TODO - adittion to priority queue
+                    rpholder.add(p);
+
+
+                    swtch(&(c->scheduler), p->context);
+                    switchkvm();
+
+                    // Process is done running for now.
+                    // It should have changed its p->state before coming back.
+                    c->proc = 0;
+                }
+            }
+            break;
+
 
         default: //default case is what we got with the xv6
             for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
