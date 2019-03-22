@@ -65,7 +65,7 @@ struct proc {
   long long accumulator;         //used in priority level
   int priority;                  //priority - used in 3.2+3.3 scheduling
   struct perf perf;              //performance times
-  int RUNNABLE_wait_time;        //addition to 3.3
+  long long RUNNABLE_wait_time;        //addition to 3.3
 
 };
 

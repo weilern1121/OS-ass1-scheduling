@@ -50,7 +50,7 @@ extern void trapret(void);
 static void wakeup1(void *chan);
 //TODO- addition
 int currpolicy=3;
-volatile int counter=0; //addition to 3.3
+volatile long long counter=0; //addition to 3.3
 
 
 
@@ -218,7 +218,7 @@ userinit(void)
   p->priority=5;
   p->RUNNABLE_wait_time=0; //surely 0 because this is the first initialized process
   p->accumulator=0; //is surely 0 because this is the first initialized process
-  if(currpolicy==2)
+  if(currpolicy==2 || currpolicy==3)
     pq.put(p);
 
   release(&ptable.lock);
@@ -416,7 +416,7 @@ scheduler(void)
 {
   struct proc *p;
   struct cpu *c = mycpu();
-  struct proc *max_p=myproc(); //just a dummy initialized value to compiled
+  struct proc *max_p=ptable.proc; //just a dummy initialized value to compiled
     c->proc = 0;
   //counter=0;
   
@@ -484,8 +484,9 @@ scheduler(void)
             if (!pq.isEmpty()) {
                 if( counter % 100 == 0)
                 {
-                    int min = MAXINT;
-
+                    //cprintf("counter= %d,\n",counter);
+                    long long min = counter;
+                    //find the process with max RUNNABLE waiting time
                     for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
                         if ((p->state == RUNNABLE) && (p->RUNNABLE_wait_time < min)){
                             min = p->RUNNABLE_wait_time;
@@ -493,8 +494,8 @@ scheduler(void)
                         }
                     }
 
-                    p = max_p;
-
+                    pq.extractProc(max_p);
+                    p=max_p;
                 }
                 else {
                     p = pq.extractMin();
@@ -795,7 +796,7 @@ priority(int prio){
             curproc->priority=prio;
     }
     if(currpolicy==3){
-        if(prio>=0 &&prio<11)
+        if(prio>-1 &&prio<11)
             curproc->priority=prio;
     }
     //curproc->priority=prio;
