@@ -12,6 +12,8 @@ extern PriorityQueue pq;
 extern RoundRobinQueue rrq;
 extern RunningProcessesHolder rpholder;
 
+#define MAXINT 1215752191
+
 long long getAccumulator(struct proc *p) {
 	return p->accumulator;
 }
@@ -47,8 +49,8 @@ extern void trapret(void);
 
 static void wakeup1(void *chan);
 //TODO- addition
-int currpolicy=2;
-int counter; //addition to 3.3
+int currpolicy=3;
+volatile int counter=0; //addition to 3.3
 
 
 
@@ -112,6 +114,10 @@ pushToSpecificQueue(struct proc* p) {
             rrq.enqueue(p);
             break;
         case 2:    //priority queue addition
+            //myproc()->accumulator += myproc()->priority;
+            pq.put(p);
+            break;
+        case 3:    //priority queue addition
             //myproc()->accumulator += myproc()->priority;
             pq.put(p);
             break;
@@ -210,6 +216,7 @@ userinit(void)
     rrq.enqueue(p);
   //TODO- priority queue addition
   p->priority=5;
+  p->RUNNABLE_wait_time=0; //surely 0 because this is the first initialized process
   p->accumulator=0; //is surely 0 because this is the first initialized process
   if(currpolicy==2)
     pq.put(p);
@@ -283,6 +290,7 @@ fork(void)
   //rrq.enqueue(np);
   //TODO - priority addition
   np->priority=5;
+  np->RUNNABLE_wait_time=counter;
   //check if this is the only procces
   if(pq.isEmpty()&&rpholder.isEmpty()) //if the only process -> acc=0
     np->accumulator=0;
@@ -407,10 +415,10 @@ void
 scheduler(void)
 {
   struct proc *p;
-  struct proc *max_p;
   struct cpu *c = mycpu();
-  c->proc = 0;
-  counter=0;
+  struct proc *max_p=myproc(); //just a dummy initialized value to compiled
+    c->proc = 0;
+  //counter=0;
   
   for(;;){
     // Enable interrupts on this processor.
@@ -418,6 +426,8 @@ scheduler(void)
 
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
+
+    counter++;
 
     //policies cases - depends on the global variable currpolicy
     switch (currpolicy) {
@@ -474,17 +484,16 @@ scheduler(void)
             if (!pq.isEmpty()) {
                 if( counter % 100 == 0)
                 {
-                    int max = 0;
+                    int min = MAXINT;
 
                     for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
-                        if ((p->state == RUNNABLE) && (p->perf.retime + p->perf.stime > max)){
-                            max = p->perf.retime + p->perf.stime;
+                        if ((p->state == RUNNABLE) && (p->RUNNABLE_wait_time < min)){
+                            min = p->RUNNABLE_wait_time;
                             max_p = p;
                         }
                     }
 
                     p = max_p;
-
 
                 }
                 else {
@@ -498,6 +507,8 @@ scheduler(void)
                     switchuvm(p);
                     p->state = RUNNING;
                     //TODO - adittion to priority queue
+                    //save the last time of running
+                    p->RUNNABLE_wait_time=counter;
                     rpholder.add(p);
 
 
@@ -779,7 +790,15 @@ detach(int pid)
 void
 priority(int prio){
     struct proc *curproc = myproc();
-    curproc->priority=prio;
+    if(currpolicy==2){
+        if(prio>0 &&prio<11)
+            curproc->priority=prio;
+    }
+    if(currpolicy==3){
+        if(prio>=0 &&prio<11)
+            curproc->priority=prio;
+    }
+    //curproc->priority=prio;
 }
 
 void
