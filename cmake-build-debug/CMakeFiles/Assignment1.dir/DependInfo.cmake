@@ -32,6 +32,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/weilern/os192/ass1/OS-ass1-scheduling/mp.c" "/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles/Assignment1.dir/mp.c.o"
   "/home/weilern/os192/ass1/OS-ass1-scheduling/picirq.c" "/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles/Assignment1.dir/picirq.c.o"
   "/home/weilern/os192/ass1/OS-ass1-scheduling/pipe.c" "/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles/Assignment1.dir/pipe.c.o"
+  "/home/weilern/os192/ass1/OS-ass1-scheduling/policy.c" "/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles/Assignment1.dir/policy.c.o"
   "/home/weilern/os192/ass1/OS-ass1-scheduling/printf.c" "/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles/Assignment1.dir/printf.c.o"
   "/home/weilern/os192/ass1/OS-ass1-scheduling/proc.c" "/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles/Assignment1.dir/proc.c.o"
   "/home/weilern/os192/ass1/OS-ass1-scheduling/rm.c" "/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/CMakeFiles/Assignment1.dir/rm.c.o"

@@ -879,6 +879,33 @@ pipe.c.s:
 	$(MAKE) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/pipe.c.s
 .PHONY : pipe.c.s
 
+policy.o: policy.c.o
+
+.PHONY : policy.o
+
+# target to build an object file
+policy.c.o:
+	$(MAKE) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/policy.c.o
+.PHONY : policy.c.o
+
+policy.i: policy.c.i
+
+.PHONY : policy.i
+
+# target to preprocess a source file
+policy.c.i:
+	$(MAKE) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/policy.c.i
+.PHONY : policy.c.i
+
+policy.s: policy.c.s
+
+.PHONY : policy.s
+
+# target to generate assembly for a file
+policy.c.s:
+	$(MAKE) -f CMakeFiles/Assignment1.dir/build.make CMakeFiles/Assignment1.dir/policy.c.s
+.PHONY : policy.c.s
+
 printf.o: printf.c.o
 
 .PHONY : printf.o
@@ -1512,6 +1539,9 @@ help:
 	@echo "... pipe.o"
 	@echo "... pipe.i"
 	@echo "... pipe.s"
+	@echo "... policy.o"
+	@echo "... policy.i"
+	@echo "... policy.s"
 	@echo "... printf.o"
 	@echo "... printf.i"
 	@echo "... printf.s"

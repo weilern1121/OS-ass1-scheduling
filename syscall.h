@@ -22,3 +22,4 @@
 #define SYS_close  21
 //TODO
 #define SYS_detach 22
+#define SYS_policy 23

@@ -212,6 +212,9 @@
 		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/pipe.c">
 			<Option target="Assignment1"/>
 		</Unit>
+		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/policy.c">
+			<Option target="Assignment1"/>
+		</Unit>
 		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/printf.c">
 			<Option target="Assignment1"/>
 		</Unit>

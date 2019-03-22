@@ -765,8 +765,7 @@ detach(int pid)
 {
     struct proc *p;
     struct proc *curproc = myproc();
-    //lock the ptable
-    acquire(&ptable.lock);
+
     for(;;){
         // Scan through table looking for exited children with same pid as the argument.
         for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
@@ -802,15 +801,70 @@ priority(int prio){
     //curproc->priority=prio;
 }
 
+
+void
+priorityUnExtended(){
+    struct proc *p;
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+        if (p->priority == 0)
+            p->priority = 1;
+    }
+}
+
+void
+switchToRoundRobin(void){
+    struct proc *p;
+    if(!pq.switchToRoundRobinPolicy())
+        panic("error in switch from policy 2/3 to policy 1\n");
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+        p->accumulator=0;
+    }
+}
+
 void
 policy(int num){
-  //check legal input
-  //TODO- need to check if there is a need to change to default or to panic
-  if(num>3 || num<1)
-    currpolicy=88; //currpolicy get the default policy
-  else
-    currpolicy=num;
+    //check legal input
+    //TODO- need to check if there is a need to change to default or to panic
+    if(num>3 || num<1)
+        return; //currpolicy get the default policy
+    // Enable interrupts on this processor.
+    sti();
+
+    // Loop over process table looking for process to run.
+    acquire(&ptable.lock);
+    switch (currpolicy){
+        case 1:
+            if(num==2 || num==3){
+                if(!rrq.switchToPriorityQueuePolicy())
+                    panic("error in switch from rouncrobin to priority queue\n");
+                //if num=2 ->check that there are no priority=0
+                if(num==2)
+                    priorityUnExtended();
+            }
+            break;
+
+        case 2:
+            if(num==1){
+                switchToRoundRobin();
+            }
+            break;
+
+        case 3:
+            if(num==1){
+                switchToRoundRobin();
+            }
+            if(num==2){
+                priorityUnExtended();
+            }
+            break;
+        default:
+            panic("illegal policy number\n");
+            break;
+    }
+    release(&ptable.lock);
 }
+
+
 
 
 
