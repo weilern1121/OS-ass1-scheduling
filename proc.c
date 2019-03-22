@@ -48,6 +48,7 @@ extern void trapret(void);
 static void wakeup1(void *chan);
 //TODO- addition
 int currpolicy=2;
+int counter; //addition to 3.3
 
 
 
@@ -406,8 +407,10 @@ void
 scheduler(void)
 {
   struct proc *p;
+  struct proc *max_p;
   struct cpu *c = mycpu();
   c->proc = 0;
+  counter=0;
   
   for(;;){
     // Enable interrupts on this processor.
@@ -476,11 +479,11 @@ scheduler(void)
                     for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
                         if ((p->state == RUNNABLE) && (p->perf.retime + p->perf.stime > max)){
                             max = p->perf.retime + p->perf.stime;
-                            max_p = *p;
+                            max_p = p;
                         }
                     }
 
-                    p = &max_p;
+                    p = max_p;
 
 
                 }
