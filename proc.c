@@ -773,25 +773,26 @@ detach(int pid)
     struct proc *p;
     struct proc *curproc = myproc();
 
-    for(;;){
-        // Scan through table looking for exited children with same pid as the argument.
-        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
-            if (p->parent != curproc)
-                continue;
-            //check if the pid is same as argument
-            if (p->pid == pid) {
-                //change the father of current proc
-                p->parent = initproc;
-                //release the ptable
-                release(&ptable.lock);
-                return 0;
-            }
+    // Scan through table looking for exited children with same pid as the argument.
+    acquire(&ptable.lock);
+
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+        if (p->parent != curproc)
+            continue;
+        //check if the pid is same as argument
+        if (p->pid == pid) {
+            //change the father of current proc
+            p->parent = initproc;
+            //release the ptable
+            release(&ptable.lock);
+            return 0;
         }
-        //if got here - didn't find proc with pid as argument - exit with error
-        release(&ptable.lock);
-        return -1;
     }
+        //if got here - didn't find proc with pid as argument - exit with error
+    release(&ptable.lock);
+    return -1;
 }
+
 
 
 void
