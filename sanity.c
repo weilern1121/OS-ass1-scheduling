@@ -8,13 +8,13 @@ main(void)
 {
     int pid=fork();
     if(pid==0){
-        sleep(300);
+        sleep(100);
         exit(5);
     }
     else{
-        int status;
-        wait(&status);
-        printf(1,"########      exit status after is: %d\n", status);
+        int *status = malloc(1);
+        wait(status);
+        printf(1,"########      exit status after is: %d\n", *status);
         //free(status);
     }
     exit(0);

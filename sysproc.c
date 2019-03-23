@@ -27,11 +27,11 @@ sys_exit(void)
 int
 sys_wait(void)
 {
-    int status = 4;
+    int *status;
 
-    if(argptr(0, (char **)status , 1) < 0)
+    if(argptr(0, (void*)&status, sizeof(*status)) < 0)
         return -1;
-    return wait(&status);
+    return wait(status);
 }
 
 int

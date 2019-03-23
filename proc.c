@@ -316,7 +316,7 @@ exit(int status)
   int fd;
 
   //TODO - the addition
-  cprintf("**exit** status=  %d\t curproc->exit_status=  %d\n",status,curproc->exit_status);
+  //cprintf("**exit** status=  %d\t curproc->exit_status=  %d\n",status,curproc->exit_status);
   curproc->exit_status=status;
 
     if(curproc == initproc)
@@ -364,7 +364,7 @@ wait(int *status)
   struct proc *p;
   int havekids, pid;
   struct proc *curproc = myproc();
-  
+
   acquire(&ptable.lock);
   for(;;){
     // Scan through table looking for exited children.
@@ -385,10 +385,9 @@ wait(int *status)
         p->killed = 0;
         p->state = UNUSED;
         //TODO - maybe need to use argptr
-        //if(status!=null)
-        //argptr()
-        status = (int *) p->exit_status;
-        cprintf("**wait**  status= %d\t p.exit_status= %d\n",status,p->exit_status);
+        if(status!=null)
+            *status = (p->exit_status);
+//        cprintf("**wait**  status= %d\t p.exit_status= %d\n",&status,p->exit_status);
 
         release(&ptable.lock);
         return pid;
