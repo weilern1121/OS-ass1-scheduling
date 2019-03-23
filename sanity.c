@@ -14,7 +14,7 @@ main(void)
     else{
         int status;
         wait(&status);
-        printf(1,"exit status after is: %d\n", status);
+        printf(1,"########      exit status after is: %d\n", status);
         //free(status);
     }
     exit(0);

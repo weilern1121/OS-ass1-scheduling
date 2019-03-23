@@ -316,9 +316,10 @@ exit(int status)
   int fd;
 
   //TODO - the addition
+  cprintf("**exit** status=  %d\t curproc->exit_status=  %d\n",status,curproc->exit_status);
   curproc->exit_status=status;
 
-  if(curproc == initproc)
+    if(curproc == initproc)
     panic("init exiting");
 
   // Close all open files.
@@ -385,8 +386,10 @@ wait(int *status)
         p->state = UNUSED;
         //TODO - maybe need to use argptr
         //if(status!=null)
-          //if(argptr())
-        p->exit_status = (int)status ;
+        //argptr()
+        status = (int *) p->exit_status;
+        cprintf("**wait**  status= %d\t p.exit_status= %d\n",status,p->exit_status);
+
         release(&ptable.lock);
         return pid;
       }
@@ -903,6 +906,11 @@ wait_stat(int* status, struct perf* performance)
         //TODO - maybe need to use argptr
         if(status!=null)
           p->exit_status= (int)status ;
+        //ent time= creation time+run time+sleep time+ready time
+        p->perf.ttime=p->perf.ctime+p->perf.rutime+p->perf.retime+p->perf.stime;
+        cprintf("process pid:  %d \n creation time:  %d\nRUNNING time:  %d\n"
+                "READY time:  %d\nSLEEPING time:  %d\nend time:  %d\n",
+                pid,p->perf.ctime,p->perf.rutime,p->perf.retime,p->perf.stime,p->perf.ttime);
         release(&ptable.lock);
         return pid;
       }
