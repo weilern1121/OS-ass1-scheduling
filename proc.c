@@ -49,7 +49,7 @@ extern void trapret(void);
 
 static void wakeup1(void *chan);
 //TODO- addition
-int currpolicy=3;
+volatile int currpolicy=1; //default- RoundRobin
 volatile long long counter=0; //addition to 3.3
 
 
@@ -423,7 +423,6 @@ scheduler(void)
   for(;;){
     // Enable interrupts on this processor.
     sti();
-
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
 
@@ -435,6 +434,8 @@ scheduler(void)
             if (!rrq.isEmpty()) {
                 p = rrq.dequeue();
                 if (p != null) {
+                    //cprintf("curr policy= %d,\n",currpolicy);
+
                     // Switch to chosen process.  It is the process's job
                     // to release ptable.lock and then reacquire it
                     // before jumping back to us.
@@ -458,6 +459,8 @@ scheduler(void)
             if (!pq.isEmpty()) {
                 p = pq.extractMin();
                 if (p != null) {
+                    //cprintf("curr policy= %d,\n",currpolicy);
+
                     // Switch to chosen process.  It is the process's job
                     // to release ptable.lock and then reacquire it
                     // before jumping back to us.
@@ -501,6 +504,8 @@ scheduler(void)
                     p = pq.extractMin();
                 }
                 if (p != null) {
+                    //cprintf("curr policy= %d,\n",currpolicy);
+
                     // Switch to chosen process.  It is the process's job
                     // to release ptable.lock and then reacquire it
                     // before jumping back to us.
@@ -829,7 +834,6 @@ policy(int num){
         return; //currpolicy get the default policy
     // Enable interrupts on this processor.
     sti();
-
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
     switch (currpolicy){

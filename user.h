@@ -26,7 +26,7 @@ int uptime(void);
 //TODO
 int detach(int pid);
 void priority(int prio);
-void policy(int num);
+int policy(int num);
 //int wait_stat(int* status, struct perf* performance);
 
 // ulib.c

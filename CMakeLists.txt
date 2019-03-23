@@ -77,4 +77,5 @@ add_executable(Assignment1
         x86.h
         zombie.c
         tmp.c
-        sanity.c policy.c)
+        sanity.c
+        policy.c)
