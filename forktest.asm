@@ -79,11 +79,11 @@ void
 printf(int fd, const char *s, ...)
 {
   write(fd, s, strlen(s));
-  59:	c7 04 24 88 04 00 00 	movl   $0x488,(%esp)
+  59:	c7 04 24 90 04 00 00 	movl   $0x490,(%esp)
   60:	e8 ab 01 00 00       	call   210 <strlen>
   65:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
   6c:	89 44 24 08          	mov    %eax,0x8(%esp)
-  70:	b8 88 04 00 00       	mov    $0x488,%eax
+  70:	b8 90 04 00 00       	mov    $0x490,%eax
   75:	89 44 24 04          	mov    %eax,0x4(%esp)
   79:	e8 7a 03 00 00       	call   3f8 <write>
   7e:	eb 12                	jmp    92 <forktest+0x42>
@@ -149,9 +149,9 @@ void
 printf(int fd, const char *s, ...)
 {
   write(fd, s, strlen(s));
-  d6:	c7 04 24 ba 04 00 00 	movl   $0x4ba,(%esp)
+  d6:	c7 04 24 c2 04 00 00 	movl   $0x4c2,(%esp)
   dd:	e8 2e 01 00 00       	call   210 <strlen>
-  e2:	ba ba 04 00 00       	mov    $0x4ba,%edx
+  e2:	ba c2 04 00 00       	mov    $0x4c2,%edx
   e7:	89 54 24 04          	mov    %edx,0x4(%esp)
   eb:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
   f2:	89 44 24 08          	mov    %eax,0x8(%esp)
@@ -173,11 +173,11 @@ void
 printf(int fd, const char *s, ...)
 {
   write(fd, s, strlen(s));
- 108:	c7 04 24 c8 04 00 00 	movl   $0x4c8,(%esp)
+ 108:	c7 04 24 d0 04 00 00 	movl   $0x4d0,(%esp)
  10f:	e8 fc 00 00 00       	call   210 <strlen>
  114:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
  11b:	89 44 24 08          	mov    %eax,0x8(%esp)
- 11f:	b8 c8 04 00 00       	mov    $0x4c8,%eax
+ 11f:	b8 d0 04 00 00       	mov    $0x4d0,%eax
  124:	89 44 24 04          	mov    %eax,0x4(%esp)
  128:	e8 cb 02 00 00       	call   3f8 <write>
       exit(0);
@@ -194,8 +194,8 @@ void
 printf(int fd, const char *s, ...)
 {
   write(fd, s, strlen(s));
- 139:	c7 04 24 93 04 00 00 	movl   $0x493,(%esp)
- 140:	bb 93 04 00 00       	mov    $0x493,%ebx
+ 139:	c7 04 24 9b 04 00 00 	movl   $0x49b,(%esp)
+ 140:	bb 9b 04 00 00       	mov    $0x49b,%ebx
  145:	e8 c6 00 00 00       	call   210 <strlen>
  14a:	89 5c 24 04          	mov    %ebx,0x4(%esp)
  14e:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
@@ -215,9 +215,9 @@ void
 printf(int fd, const char *s, ...)
 {
   write(fd, s, strlen(s));
- 16a:	c7 04 24 a7 04 00 00 	movl   $0x4a7,(%esp)
+ 16a:	c7 04 24 af 04 00 00 	movl   $0x4af,(%esp)
  171:	e8 9a 00 00 00       	call   210 <strlen>
- 176:	b9 a7 04 00 00       	mov    $0x4a7,%ecx
+ 176:	b9 af 04 00 00       	mov    $0x4af,%ecx
  17b:	89 4c 24 04          	mov    %ecx,0x4(%esp)
  17f:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
  186:	89 44 24 08          	mov    %eax,0x8(%esp)
@@ -894,3 +894,9 @@ SYSCALL(detach)
  480:	b8 16 00 00 00       	mov    $0x16,%eax
  485:	cd 40                	int    $0x40
  487:	c3                   	ret    
+
+00000488 <priority>:
+SYSCALL(priority)
+ 488:	b8 18 00 00 00       	mov    $0x18,%eax
+ 48d:	cd 40                	int    $0x40
+ 48f:	c3                   	ret    

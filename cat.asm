@@ -856,10 +856,12 @@ SYSCALL(detach)
  420:	b8 16 00 00 00       	mov    $0x16,%eax
  425:	cd 40                	int    $0x40
  427:	c3                   	ret    
- 428:	66 90                	xchg   %ax,%ax
- 42a:	66 90                	xchg   %ax,%ax
- 42c:	66 90                	xchg   %ax,%ax
- 42e:	66 90                	xchg   %ax,%ax
+
+00000428 <priority>:
+SYSCALL(priority)
+ 428:	b8 18 00 00 00       	mov    $0x18,%eax
+ 42d:	cd 40                	int    $0x40
+ 42f:	c3                   	ret    
 
 00000430 <printint>:
   write(fd, &c, 1);

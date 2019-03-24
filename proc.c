@@ -12,7 +12,6 @@ extern PriorityQueue pq;
 extern RoundRobinQueue rrq;
 extern RunningProcessesHolder rpholder;
 
-#define MAXINT 1215752191
 
 long long getAccumulator(struct proc *p) {
     return p->accumulator;
@@ -848,7 +847,7 @@ policy(int num){
         case 1:
             if(num==2 || num==3){
                 if(!rrq.switchToPriorityQueuePolicy())
-                    panic("error in switch from rouncrobin to priority queue\n");
+               //     panic("error in switch from rouncrobin to priority queue\n");
                 //if num=2 ->check that there are no priority=0
                 if(num==2)
                     priorityUnExtended();

@@ -105,15 +105,6 @@ sys_detach(void){
     return -1;
   return detach(pid);
 }
-//TODO -need to understand how to call this sys_call
-int
-sys_priority(void){
-  int pid;
-  if(argint(0, &pid) < 0)
-    return -1;
-  priority(pid);
-  return 0;
-}
 
 int
 sys_policy(void){
@@ -121,6 +112,16 @@ sys_policy(void){
     if(argint(0, &pid) < 0)
         return -1;
     policy(pid);
+    return 0;
+}
+
+//TODO -need to understand how to call this sys_call
+int
+sys_priority(void){
+    int pid;
+    if(argint(0, &pid) < 0)
+        return -1;
+    priority(pid);
     return 0;
 }
 

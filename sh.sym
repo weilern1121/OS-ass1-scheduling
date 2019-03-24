@@ -38,6 +38,7 @@
 00000820 gettoken
 00001560 malloc
 00001208 sleep
+00001228 priority
 00001de4 whitespace
 00000250 strcpyuntildelimiter
 00000680 fork1
