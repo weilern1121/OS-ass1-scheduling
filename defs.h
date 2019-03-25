@@ -9,6 +9,7 @@ struct spinlock;
 struct sleeplock;
 struct stat;
 struct superblock;
+struct perf;
 
 // bio.c
 void            binit(void);
@@ -111,6 +112,7 @@ int             kill(int);
 struct cpu*     mycpu(void);
 struct proc*    myproc();
 void            pinit(void);
+void            update_procs_performances(void);
 void            procdump(void);
 void            scheduler(void) __attribute__((noreturn));
 void            sched(void);
@@ -123,7 +125,7 @@ void            yield(void);
 int             detach(int pid);
 void            priority(int prio);
 void            policy(int num);
-//int             wait_stat(int* status, struct perf* performance);
+int             wait_stat(int* status, struct perf* performance);
 
 
 

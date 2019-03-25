@@ -130,5 +130,16 @@ int
 sys_wait_stat(void)
 {
   //TODO - add perf struct to the args of the function
-  return 0;
+    int *status;
+    struct perf *performance = 0;
+
+    /*performance->ctime = 0;
+    performance->ttime = 0;
+    performance->stime = 0;
+    performance->retime = 0;
+    performance->rutime = 0;*/
+
+    if(argptr(0, (void*)&status, sizeof(*status)) < 0)
+        return -1;
+    return wait_stat(status , performance);
 }

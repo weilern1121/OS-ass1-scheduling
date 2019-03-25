@@ -55,7 +55,37 @@ volatile long long counter=0; //addition to 3.3
 
 
 
+void
+update_procs_performances(void)
+{
+    struct proc *p;
 
+
+    acquire(&ptable.lock);
+
+    for (p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+    {
+        switch(p->state){
+            case RUNNABLE:
+                p->proc_perf.retime++;
+                break;
+
+            case RUNNING:
+                p->proc_perf.rutime++;
+                break;
+
+            case SLEEPING:
+                p->proc_perf.stime++;
+                break;
+
+            default:
+                break;
+
+        }
+    }
+
+    release(&ptable.lock);
+}
 
 
 
@@ -158,6 +188,7 @@ allocproc(void)
     found:
     p->state = EMBRYO;
     p->pid = nextpid++;
+    //TODO we can do ctime here;
 
     release(&ptable.lock);
 
@@ -219,15 +250,18 @@ userinit(void)
     acquire(&ptable.lock);
 
     p->state = RUNNABLE;
-    //TODO- roundrobin addition
-    //TODO- priority queue addition
     p->priority=5;
     p->RUNNABLE_wait_time=0;    //surely 0 because this is the first initialized process
     p->accumulator=0;          //surely 0 because this is the first initialized process
-    if(currpolicy==1)
-        rrq.enqueue(p);
-    if(currpolicy==2 || currpolicy==3)
-        pq.put(p);
+
+
+    acquire(&tickslock);
+    p->proc_perf.ctime = ticks;
+    //??        wakeup(&ticks);
+    release(&tickslock);
+
+    //add np (i.e currproc) to the priority queue
+    pushToSpecificQueue(p);
 
     release(&ptable.lock);
 }
@@ -294,15 +328,17 @@ fork(void)
     acquire(&ptable.lock);
 
     np->state = RUNNABLE;
-    //TODO- roundrobin addition
-    //rrq.enqueue(np);
-    //TODO - priority addition
     np->priority=5;
     np->RUNNABLE_wait_time=counter;
+
+    acquire(&tickslock);
+    np->proc_perf.ctime = ticks;
+    //??        wakeup(&ticks);
+    release(&tickslock);
+
     //update the accumulator value
     updateAccumulator(np);
     //add np (i.e currproc) to the priority queue
-    //pq.put(np);
     pushToSpecificQueue(np);
 
     release(&ptable.lock);
@@ -320,8 +356,6 @@ exit(int status)
     struct proc *p;
     int fd;
 
-    //TODO - the addition
-    //cprintf("**exit** status=  %d\t curproc->exit_status=  %d\n",status,curproc->exit_status);
     curproc->exit_status=status;
 
     if(curproc == initproc)
@@ -341,6 +375,11 @@ exit(int status)
     curproc->cwd = 0;
 
     acquire(&ptable.lock);
+
+    // TODO update termination time
+    acquire(&tickslock);
+    curproc->proc_perf.ttime = ticks;
+    release(&tickslock);
 
     // Parent might be sleeping in wait().
     wakeup1(curproc->parent);
@@ -903,7 +942,16 @@ wait_stat(int* status, struct perf* performance)
             if(p->parent != curproc)
                 continue;
             havekids = 1;
+
             if(p->state == ZOMBIE){
+
+                //TODO we added values here;
+                performance->ctime = p->proc_perf.ctime;
+                performance->ttime = p->proc_perf.ttime;
+                performance->stime = p->proc_perf.stime;
+                performance->retime = p->proc_perf.retime;
+                performance->rutime = p->proc_perf.rutime;
+
                 // Found one.
                 pid = p->pid;
                 kfree(p->kstack);
@@ -917,11 +965,7 @@ wait_stat(int* status, struct perf* performance)
                 //TODO - maybe need to use argptr
                 if(status!=null)
                     p->exit_status= (int)status ;
-                //ent time= creation time+run time+sleep time+ready time
-                p->perf.ttime=p->perf.ctime+p->perf.rutime+p->perf.retime+p->perf.stime;
-                cprintf("process pid:  %d \n creation time:  %d\nRUNNING time:  %d\n"
-                        "READY time:  %d\nSLEEPING time:  %d\nend time:  %d\n",
-                        pid,p->perf.ctime,p->perf.rutime,p->perf.retime,p->perf.stime,p->perf.ttime);
+
                 release(&ptable.lock);
                 return pid;
             }

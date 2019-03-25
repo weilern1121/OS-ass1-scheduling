@@ -64,7 +64,7 @@ struct proc {
   int exit_status;               // ADDITION - exit status for exit and wait
   long long accumulator;         //used in priority level
   int priority;                  //priority - used in 3.2+3.3 scheduling
-  struct perf perf;              //performance times
+  struct perf proc_perf;              //performance times
   long long RUNNABLE_wait_time;        //addition to 3.3
 
 };
