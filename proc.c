@@ -47,7 +47,6 @@ extern void forkret(void);
 extern void trapret(void);
 
 static void wakeup1(void *chan);
-//TODO- addition
 volatile int currpolicy=1; //default- RoundRobin
 volatile long long counter=0; //addition to 3.3
 
@@ -152,11 +151,9 @@ pushToSpecificQueue(struct proc* p) {
             rrq.enqueue(p);
             break;
         case 2:    //priority queue addition
-            //myproc()->accumulator += myproc()->priority;
             pq.put(p);
             break;
         case 3:    //priority queue addition
-            //myproc()->accumulator += myproc()->priority;
             pq.put(p);
             break;
         default:
@@ -333,6 +330,9 @@ fork(void)
 
     acquire(&tickslock);
     np->proc_perf.ctime = ticks;
+    np->proc_perf.retime = 0;
+    np->proc_perf.rutime = 0;
+    np->proc_perf.stime = 0;
     //??        wakeup(&ticks);
     release(&tickslock);
 
@@ -381,6 +381,13 @@ exit(int status)
     curproc->proc_perf.ttime = ticks;
     release(&tickslock);
 
+
+   /* cprintf(" CTIME : %d     \n" , curproc->proc_perf.ctime);
+    cprintf(" TTIME : %d     \n" , curproc->proc_perf.ttime);
+    cprintf(" RUTIME : %d     \n" , curproc->proc_perf.rutime);
+    cprintf(" RETIME : %d     \n" , curproc->proc_perf.retime);
+    cprintf(" STIME : %d     \n\n\n" , curproc->proc_perf.stime);*/
+
     // Parent might be sleeping in wait().
     wakeup1(curproc->parent);
 
@@ -428,10 +435,8 @@ wait(int *status)
                 p->name[0] = 0;
                 p->killed = 0;
                 p->state = UNUSED;
-                //TODO - maybe need to use argptr
                 if(status!=null)
                     *status = (p->exit_status);
-//        cprintf("**wait**  status= %d\t p.exit_status= %d\n",&status,p->exit_status);
 
                 release(&ptable.lock);
                 return pid;
@@ -462,7 +467,7 @@ scheduler(void)
 {
     struct proc *p;
     struct cpu *c = mycpu();
-    struct proc *max_p=ptable.proc; //just a dummy initialized value to compiled
+    struct proc *max_p=0;
     c->proc = 0;
     //counter=0;
 
@@ -480,15 +485,14 @@ scheduler(void)
                 if (!rrq.isEmpty()) {
                     p = rrq.dequeue();
                     if (p != null) {
-                        //cprintf("curr policy= %d,\n",currpolicy);
-
-                        // Switch to chosen process.  It is the process's job
+                         // Switch to chosen process.  It is the process's job
                         // to release ptable.lock and then reacquire it
                         // before jumping back to us.
                         c->proc = p;
                         switchuvm(p);
                         p->state = RUNNING;
-                        //TODO - adittion to priority queue
+                        p->RUNNABLE_wait_time=counter;
+
                         rpholder.add(p);
 
                         swtch(&(c->scheduler), p->context);
@@ -505,15 +509,14 @@ scheduler(void)
                 if (!pq.isEmpty()) {
                     p = pq.extractMin();
                     if (p != null) {
-                        //cprintf("curr policy= %d,\n",currpolicy);
-
                         // Switch to chosen process.  It is the process's job
                         // to release ptable.lock and then reacquire it
                         // before jumping back to us.
                         c->proc = p;
                         switchuvm(p);
                         p->state = RUNNING;
-                        //TODO - adittion to priority queue
+                        p->RUNNABLE_wait_time=counter;
+
                         rpholder.add(p);
 
                         swtch(&(c->scheduler), p->context);
@@ -525,15 +528,11 @@ scheduler(void)
                     }
                 }
                 break;
-                // TODO we must consider case where we want to add another int wating time
-                // that counts time between running periods or just use the max total waiting time
-                //of all process.
 
             case 3: //3.3 - priority scheduling
                 if (!pq.isEmpty()) {
                     if( counter % 100 == 0)
                     {
-                        //cprintf("counter= %d,\n",counter);
                         long long min = counter;
                         //find the process with max RUNNABLE waiting time
                         for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
@@ -542,14 +541,18 @@ scheduler(void)
                                 max_p = p;
                             }
                         }
-                        pq.extractProc(max_p);
-                        p=max_p;
+                        if(max_p != 0)
+                        {
+                            pq.extractProc(max_p);
+                            p=max_p;
+                        }
+
                     }
                     else {
                         p = pq.extractMin();
                     }
+
                     if (p != null) {
-                        //cprintf("curr policy= %d,\n",currpolicy);
 
                         // Switch to chosen process.  It is the process's job
                         // to release ptable.lock and then reacquire it
@@ -557,7 +560,7 @@ scheduler(void)
                         c->proc = p;
                         switchuvm(p);
                         p->state = RUNNING;
-                        //TODO - adittion to priority queue
+
                         //save the last time of running
                         p->RUNNABLE_wait_time=counter;
                         rpholder.add(p);
@@ -585,7 +588,7 @@ scheduler(void)
                     c->proc = p;
                     switchuvm(p);
                     p->state = RUNNING;
-                    //TODO - adittion to priority queue
+
                     rpholder.add(p);
 
                     swtch(&(c->scheduler), p->context);
@@ -633,14 +636,19 @@ sched(void)
 void
 yield(void)
 {
+    struct proc *p = myproc();
+
     acquire(&ptable.lock);  //DOC: yieldlock
-    myproc()->state = RUNNABLE;
-    myproc()->accumulator+=myproc()->priority;
-    //TODO - addition to round-robin scheduling
-    rrq.enqueue(myproc());
-    //TODO- priority queue addition
-    pq.put(myproc()); //add to runabble queue
-    rpholder.remove(myproc());//remove from running queue
+
+    p->state = RUNNABLE;
+    if(currpolicy == 2 || currpolicy == 3)
+    {
+        p->accumulator+=p->priority;
+    }
+
+    pushToSpecificQueue(p);
+
+    rpholder.remove(p);//remove from running queue
 
     sched();
     release(&ptable.lock);
@@ -680,8 +688,11 @@ sleep(void *chan, struct spinlock *lk)
     if(lk == 0)
         panic("sleep without lk");
 
-    //TODO - addition to priority queue
-    p->accumulator+=p->priority;  // add the priority to the acc
+
+    if(currpolicy == 2 || currpolicy == 3)
+    {
+        p->accumulator+=p->priority;
+    }
     rpholder.remove(p); //remove p from RUNNING queue
 
     // Must acquire ptable.lock in order to
@@ -721,11 +732,6 @@ wakeup1(void *chan)
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
         if(p->state == SLEEPING && p->chan == chan){
             p->state = RUNNABLE;
-            //TODO- roundrobin addition
-            //rrq.enqueue(p);
-            //TODO- priority queue addition
-            //p->accumulator+=p->priority;
-            //pq.put(p);
             //update the accumulator field
             updateAccumulator(p);
             pushToSpecificQueue(p);
@@ -756,11 +762,6 @@ kill(int pid)
             // Wake process from sleep if necessary.
             if(p->state == SLEEPING){
                 p->state = RUNNABLE;
-                //TODO- roundrobin addition
-                //rrq.enqueue(p);
-                //TODO- priority queue addition
-                p->accumulator+=p->priority;
-                //pq.put(p);
                 pushToSpecificQueue(p);
             }
             release(&ptable.lock);
@@ -917,7 +918,9 @@ policy(int num){
             panic("illegal policy number\n");
             break;
     }
+    currpolicy=num; //save the new policy
     release(&ptable.lock);
+
 
 }
 
@@ -951,7 +954,6 @@ wait_stat(int* status, struct perf* performance)
                 performance->stime = p->proc_perf.stime;
                 performance->retime = p->proc_perf.retime;
                 performance->rutime = p->proc_perf.rutime;
-
                 // Found one.
                 pid = p->pid;
                 kfree(p->kstack);

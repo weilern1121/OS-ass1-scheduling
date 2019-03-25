@@ -12,10 +12,13 @@ Disassembly of section .text:
 
 int main(void) {
    0:	55                   	push   %ebp
-    //run_test(&test_exit_wait, "exit&wait");
-    //run_test(&test_detach, "detach");
-    run_test(&test_round_robin_policy, "round robin policy");
-   1:	b8 15 11 00 00       	mov    $0x1115,%eax
+    //run_test(&test_round_robin_policy, "round robin policy");
+    //run_test(&test_priority_policy, "priority policy");
+    //run_test(&test_extended_priority_policy, "extended priority policy");
+    //run_test(&test_accumulator, "accumulator");
+    //run_test(&test_starvation, "starvation");
+    run_test(&test_performance_round_robin, "performance round robin");
+   1:	b8 09 11 00 00       	mov    $0x1109,%eax
     return result;
 
 }
@@ -25,27 +28,25 @@ int main(void) {
    6:	89 e5                	mov    %esp,%ebp
    8:	83 e4 f0             	and    $0xfffffff0,%esp
    b:	83 ec 10             	sub    $0x10,%esp
-    //run_test(&test_exit_wait, "exit&wait");
-    //run_test(&test_detach, "detach");
-    run_test(&test_round_robin_policy, "round robin policy");
-   e:	89 44 24 04          	mov    %eax,0x4(%esp)
-  12:	c7 04 24 30 05 00 00 	movl   $0x530,(%esp)
-  19:	e8 42 00 00 00       	call   60 <run_test>
-    run_test(&test_priority_policy, "priority policy");
-  1e:	ba 31 11 00 00       	mov    $0x1131,%edx
-  23:	89 54 24 04          	mov    %edx,0x4(%esp)
-  27:	c7 04 24 50 05 00 00 	movl   $0x550,(%esp)
-  2e:	e8 2d 00 00 00       	call   60 <run_test>
-    run_test(&test_extended_priority_policy, "extended priority policy");
-  33:	b9 28 11 00 00       	mov    $0x1128,%ecx
-  38:	89 4c 24 04          	mov    %ecx,0x4(%esp)
-  3c:	c7 04 24 a0 05 00 00 	movl   $0x5a0,(%esp)
-  43:	e8 18 00 00 00       	call   60 <run_test>
+    //run_test(&test_round_robin_policy, "round robin policy");
+    //run_test(&test_priority_policy, "priority policy");
+    //run_test(&test_extended_priority_policy, "extended priority policy");
     //run_test(&test_accumulator, "accumulator");
     //run_test(&test_starvation, "starvation");
-    //run_test(&test_performance_round_robin, "performance round robin");
-    //run_test(&test_performance_priority, "performance priority");
-    //run_test(&test_performance_extended_priority, "performance extended priority");
+    run_test(&test_performance_round_robin, "performance round robin");
+   e:	89 44 24 04          	mov    %eax,0x4(%esp)
+  12:	c7 04 24 a0 06 00 00 	movl   $0x6a0,(%esp)
+  19:	e8 42 00 00 00       	call   60 <run_test>
+    run_test(&test_performance_priority, "performance priority");
+  1e:	ba 21 11 00 00       	mov    $0x1121,%edx
+  23:	89 54 24 04          	mov    %edx,0x4(%esp)
+  27:	c7 04 24 c0 06 00 00 	movl   $0x6c0,(%esp)
+  2e:	e8 2d 00 00 00       	call   60 <run_test>
+    run_test(&test_performance_extended_priority, "performance extended priority");
+  33:	b9 36 11 00 00       	mov    $0x1136,%ecx
+  38:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+  3c:	c7 04 24 00 07 00 00 	movl   $0x700,(%esp)
+  43:	e8 18 00 00 00       	call   60 <run_test>
     exit(0);
   48:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
   4f:	e8 64 0a 00 00       	call   ab8 <exit>
@@ -790,7 +791,7 @@ boolean assert_equals(int expected, int actual, char *msg) {
  499:	74 e5                	je     480 <test_policy_helper+0x30>
         printf(2, "Assert %s failed: expected %d but got %d\n", msg, expected, actual);
  49b:	89 44 24 10          	mov    %eax,0x10(%esp)
- 49f:	ba 09 11 00 00       	mov    $0x1109,%edx
+ 49f:	ba 15 11 00 00       	mov    $0x1115,%edx
  4a4:	31 c0                	xor    %eax,%eax
  4a6:	b9 10 10 00 00       	mov    $0x1010,%ecx
             exit(0);
@@ -1116,367 +1117,371 @@ boolean test_performance_helper(int *npriority) {
  693:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
  699:	8d bc 27 00 00 00 00 	lea    0x0(%edi,%eiz,1),%edi
 
-000006a0 <test_starvation_helper>:
-    }
-    return true;
+000006a0 <test_performance_round_robin>:
+boolean test_starvation() {
+    return test_starvation_helper(EXTENED_PRIORITY, 0);
 }
 
 
-boolean test_starvation_helper(int npolicy, int npriority) {
+boolean test_performance_round_robin() {
  6a0:	55                   	push   %ebp
  6a1:	89 e5                	mov    %esp,%ebp
- 6a3:	57                   	push   %edi
- 6a4:	56                   	push   %esi
-    boolean result = true;
-    policy(npolicy);
-    int nProcs = 10;
-    int pid_arr[nProcs];
-    int pid;
-    memset(&pid_arr, 0, nProcs * sizeof(int));
- 6a5:	31 f6                	xor    %esi,%esi
+ 6a3:	83 ec 18             	sub    $0x18,%esp
+    return test_performance_helper(null);
+ 6a6:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 6ad:	e8 3e ff ff ff       	call   5f0 <test_performance_helper>
+}
+ 6b2:	c9                   	leave  
+ 6b3:	c3                   	ret    
+ 6b4:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+ 6ba:	8d bf 00 00 00 00    	lea    0x0(%edi),%edi
+
+000006c0 <test_performance_priority>:
+
+boolean test_performance_priority() {
+ 6c0:	55                   	push   %ebp
+ 6c1:	89 e5                	mov    %esp,%ebp
+ 6c3:	53                   	push   %ebx
+ 6c4:	83 ec 24             	sub    $0x24,%esp
+    policy(PRIORITY);
+ 6c7:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
+ 6ce:	e8 85 04 00 00       	call   b58 <policy>
+    int npriority = 2;
+    boolean result = test_performance_helper(&npriority);
+ 6d3:	8d 45 f4             	lea    -0xc(%ebp),%eax
+ 6d6:	89 04 24             	mov    %eax,(%esp)
+    return test_performance_helper(null);
+}
+
+boolean test_performance_priority() {
+    policy(PRIORITY);
+    int npriority = 2;
+ 6d9:	c7 45 f4 02 00 00 00 	movl   $0x2,-0xc(%ebp)
+    boolean result = test_performance_helper(&npriority);
+ 6e0:	e8 0b ff ff ff       	call   5f0 <test_performance_helper>
+    policy(ROUND_ROBIN);
+ 6e5:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
+}
+
+boolean test_performance_priority() {
+    policy(PRIORITY);
+    int npriority = 2;
+    boolean result = test_performance_helper(&npriority);
+ 6ec:	89 c3                	mov    %eax,%ebx
+    policy(ROUND_ROBIN);
+ 6ee:	e8 65 04 00 00       	call   b58 <policy>
+    return result;
+
+}
+ 6f3:	83 c4 24             	add    $0x24,%esp
+ 6f6:	89 d8                	mov    %ebx,%eax
+ 6f8:	5b                   	pop    %ebx
+ 6f9:	5d                   	pop    %ebp
+ 6fa:	c3                   	ret    
+ 6fb:	90                   	nop
+ 6fc:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
+
+00000700 <test_performance_extended_priority>:
+
+boolean test_performance_extended_priority() {
+ 700:	55                   	push   %ebp
+ 701:	89 e5                	mov    %esp,%ebp
+ 703:	53                   	push   %ebx
+ 704:	83 ec 24             	sub    $0x24,%esp
+    policy(EXTENED_PRIORITY);
+ 707:	c7 04 24 03 00 00 00 	movl   $0x3,(%esp)
+ 70e:	e8 45 04 00 00       	call   b58 <policy>
+    int npriority = 0;
+    boolean result = test_performance_helper(&npriority);
+ 713:	8d 45 f4             	lea    -0xc(%ebp),%eax
+ 716:	89 04 24             	mov    %eax,(%esp)
+
+}
+
+boolean test_performance_extended_priority() {
+    policy(EXTENED_PRIORITY);
+    int npriority = 0;
+ 719:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+    boolean result = test_performance_helper(&npriority);
+ 720:	e8 cb fe ff ff       	call   5f0 <test_performance_helper>
+    policy(ROUND_ROBIN);
+ 725:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
+}
+
+boolean test_performance_extended_priority() {
+    policy(EXTENED_PRIORITY);
+    int npriority = 0;
+    boolean result = test_performance_helper(&npriority);
+ 72c:	89 c3                	mov    %eax,%ebx
+    policy(ROUND_ROBIN);
+ 72e:	e8 25 04 00 00       	call   b58 <policy>
+    return result;
+
+}
+ 733:	83 c4 24             	add    $0x24,%esp
+ 736:	89 d8                	mov    %ebx,%eax
+ 738:	5b                   	pop    %ebx
+ 739:	5d                   	pop    %ebp
+ 73a:	c3                   	ret    
+ 73b:	90                   	nop
+ 73c:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
+
+00000740 <test_starvation_helper>:
     }
     return true;
 }
 
 
 boolean test_starvation_helper(int npolicy, int npriority) {
- 6a7:	53                   	push   %ebx
+ 740:	55                   	push   %ebp
+ 741:	89 e5                	mov    %esp,%ebp
+ 743:	57                   	push   %edi
+ 744:	56                   	push   %esi
     boolean result = true;
     policy(npolicy);
     int nProcs = 10;
     int pid_arr[nProcs];
     int pid;
     memset(&pid_arr, 0, nProcs * sizeof(int));
- 6a8:	bb 28 00 00 00       	mov    $0x28,%ebx
+ 745:	31 f6                	xor    %esi,%esi
     }
     return true;
 }
 
 
 boolean test_starvation_helper(int npolicy, int npriority) {
- 6ad:	83 ec 5c             	sub    $0x5c,%esp
+ 747:	53                   	push   %ebx
     boolean result = true;
     policy(npolicy);
- 6b0:	8b 45 08             	mov    0x8(%ebp),%eax
- 6b3:	89 04 24             	mov    %eax,(%esp)
- 6b6:	e8 9d 04 00 00       	call   b58 <policy>
     int nProcs = 10;
     int pid_arr[nProcs];
     int pid;
     memset(&pid_arr, 0, nProcs * sizeof(int));
- 6bb:	89 5c 24 08          	mov    %ebx,0x8(%esp)
- 6bf:	8d 5d c0             	lea    -0x40(%ebp),%ebx
- 6c2:	89 74 24 04          	mov    %esi,0x4(%esp)
+ 748:	bb 28 00 00 00       	mov    $0x28,%ebx
+    }
+    return true;
+}
+
+
+boolean test_starvation_helper(int npolicy, int npriority) {
+ 74d:	83 ec 5c             	sub    $0x5c,%esp
+    boolean result = true;
+    policy(npolicy);
+ 750:	8b 45 08             	mov    0x8(%ebp),%eax
+ 753:	89 04 24             	mov    %eax,(%esp)
+ 756:	e8 fd 03 00 00       	call   b58 <policy>
+    int nProcs = 10;
+    int pid_arr[nProcs];
+    int pid;
+    memset(&pid_arr, 0, nProcs * sizeof(int));
+ 75b:	89 5c 24 08          	mov    %ebx,0x8(%esp)
+ 75f:	8d 5d c0             	lea    -0x40(%ebp),%ebx
+ 762:	89 74 24 04          	mov    %esi,0x4(%esp)
     for (int i = 0; i < nProcs; ++i) {
- 6c6:	31 f6                	xor    %esi,%esi
+ 766:	31 f6                	xor    %esi,%esi
     boolean result = true;
     policy(npolicy);
     int nProcs = 10;
     int pid_arr[nProcs];
     int pid;
     memset(&pid_arr, 0, nProcs * sizeof(int));
- 6c8:	89 1c 24             	mov    %ebx,(%esp)
- 6cb:	e8 40 02 00 00       	call   910 <memset>
+ 768:	89 1c 24             	mov    %ebx,(%esp)
+ 76b:	e8 a0 01 00 00       	call   910 <memset>
     for (int i = 0; i < nProcs; ++i) {
         pid = fork();
- 6d0:	e8 db 03 00 00       	call   ab0 <fork>
+ 770:	e8 3b 03 00 00       	call   ab0 <fork>
         if (pid < 0) {
- 6d5:	85 c0                	test   %eax,%eax
- 6d7:	78 0f                	js     6e8 <test_starvation_helper+0x48>
+ 775:	85 c0                	test   %eax,%eax
+ 777:	78 0f                	js     788 <test_starvation_helper+0x48>
             break;
         } else if (pid == 0) {
- 6d9:	0f 84 a1 00 00 00    	je     780 <test_starvation_helper+0xe0>
+ 779:	0f 84 a1 00 00 00    	je     820 <test_starvation_helper+0xe0>
             sleep(5);
             priority(npriority);
             for (;;) {};
         } else {
             pid_arr[i] = pid;
- 6df:	89 04 b3             	mov    %eax,(%ebx,%esi,4)
+ 77f:	89 04 b3             	mov    %eax,(%ebx,%esi,4)
     policy(npolicy);
     int nProcs = 10;
     int pid_arr[nProcs];
     int pid;
     memset(&pid_arr, 0, nProcs * sizeof(int));
     for (int i = 0; i < nProcs; ++i) {
- 6e2:	46                   	inc    %esi
- 6e3:	83 fe 0a             	cmp    $0xa,%esi
- 6e6:	75 e8                	jne    6d0 <test_starvation_helper+0x30>
+ 782:	46                   	inc    %esi
+ 783:	83 fe 0a             	cmp    $0xa,%esi
+ 786:	75 e8                	jne    770 <test_starvation_helper+0x30>
             for (;;) {};
         } else {
             pid_arr[i] = pid;
         }
     }
     sleep(100);
- 6e8:	c7 04 24 64 00 00 00 	movl   $0x64,(%esp)
- 6ef:	8d 7d e8             	lea    -0x18(%ebp),%edi
+ 788:	c7 04 24 64 00 00 00 	movl   $0x64,(%esp)
+ 78f:	8d 7d e8             	lea    -0x18(%ebp),%edi
     return true;
 }
 
 
 boolean test_starvation_helper(int npolicy, int npriority) {
     boolean result = true;
- 6f2:	be 01 00 00 00       	mov    $0x1,%esi
+ 792:	be 01 00 00 00       	mov    $0x1,%esi
             for (;;) {};
         } else {
             pid_arr[i] = pid;
         }
     }
     sleep(100);
- 6f7:	e8 4c 04 00 00       	call   b48 <sleep>
- 6fc:	eb 15                	jmp    713 <test_starvation_helper+0x73>
- 6fe:	66 90                	xchg   %ax,%ax
+ 797:	e8 ac 03 00 00       	call   b48 <sleep>
+ 79c:	eb 15                	jmp    7b3 <test_starvation_helper+0x73>
+ 79e:	66 90                	xchg   %ax,%ax
     for (int j = 0; j < nProcs; ++j) {
         if (pid_arr[j] != 0) {
             result = result && assert_equals(0, kill(pid_arr[j]), "failed to kill child (yes it does sound horrible)");
             wait(null);
- 700:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
- 707:	e8 b4 03 00 00       	call   ac0 <wait>
- 70c:	83 c3 04             	add    $0x4,%ebx
+ 7a0:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+ 7a7:	e8 14 03 00 00       	call   ac0 <wait>
+ 7ac:	83 c3 04             	add    $0x4,%ebx
         } else {
             pid_arr[i] = pid;
         }
     }
     sleep(100);
     for (int j = 0; j < nProcs; ++j) {
- 70f:	39 df                	cmp    %ebx,%edi
- 711:	74 4d                	je     760 <test_starvation_helper+0xc0>
+ 7af:	39 df                	cmp    %ebx,%edi
+ 7b1:	74 4d                	je     800 <test_starvation_helper+0xc0>
         if (pid_arr[j] != 0) {
- 713:	8b 03                	mov    (%ebx),%eax
- 715:	85 c0                	test   %eax,%eax
- 717:	74 f3                	je     70c <test_starvation_helper+0x6c>
+ 7b3:	8b 03                	mov    (%ebx),%eax
+ 7b5:	85 c0                	test   %eax,%eax
+ 7b7:	74 f3                	je     7ac <test_starvation_helper+0x6c>
             result = result && assert_equals(0, kill(pid_arr[j]), "failed to kill child (yes it does sound horrible)");
- 719:	85 f6                	test   %esi,%esi
- 71b:	74 e3                	je     700 <test_starvation_helper+0x60>
- 71d:	89 04 24             	mov    %eax,(%esp)
- 720:	be 01 00 00 00       	mov    $0x1,%esi
- 725:	e8 be 03 00 00       	call   ae8 <kill>
+ 7b9:	85 f6                	test   %esi,%esi
+ 7bb:	74 e3                	je     7a0 <test_starvation_helper+0x60>
+ 7bd:	89 04 24             	mov    %eax,(%esp)
+ 7c0:	be 01 00 00 00       	mov    $0x1,%esi
+ 7c5:	e8 1e 03 00 00       	call   ae8 <kill>
         printf(1, "========== Test - %s: Failed ==========\n", name);
     }
 }
 
 boolean assert_equals(int expected, int actual, char *msg) {
     if (expected != actual) {
- 72a:	85 c0                	test   %eax,%eax
- 72c:	74 d2                	je     700 <test_starvation_helper+0x60>
+ 7ca:	85 c0                	test   %eax,%eax
+ 7cc:	74 d2                	je     7a0 <test_starvation_helper+0x60>
         printf(2, "Assert %s failed: expected %d but got %d\n", msg, expected, actual);
- 72e:	89 44 24 10          	mov    %eax,0x10(%esp)
- 732:	ba 3c 10 00 00       	mov    $0x103c,%edx
- 737:	31 c0                	xor    %eax,%eax
- 739:	b9 10 10 00 00       	mov    $0x1010,%ecx
+ 7ce:	89 44 24 10          	mov    %eax,0x10(%esp)
+ 7d2:	ba 3c 10 00 00       	mov    $0x103c,%edx
+ 7d7:	31 c0                	xor    %eax,%eax
+ 7d9:	b9 10 10 00 00       	mov    $0x1010,%ecx
         }
     }
     sleep(100);
     for (int j = 0; j < nProcs; ++j) {
         if (pid_arr[j] != 0) {
             result = result && assert_equals(0, kill(pid_arr[j]), "failed to kill child (yes it does sound horrible)");
- 73e:	31 f6                	xor    %esi,%esi
+ 7de:	31 f6                	xor    %esi,%esi
     }
 }
 
 boolean assert_equals(int expected, int actual, char *msg) {
     if (expected != actual) {
         printf(2, "Assert %s failed: expected %d but got %d\n", msg, expected, actual);
- 740:	89 44 24 0c          	mov    %eax,0xc(%esp)
- 744:	89 54 24 08          	mov    %edx,0x8(%esp)
- 748:	89 4c 24 04          	mov    %ecx,0x4(%esp)
- 74c:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
- 753:	e8 d8 04 00 00       	call   c30 <printf>
- 758:	eb a6                	jmp    700 <test_starvation_helper+0x60>
- 75a:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+ 7e0:	89 44 24 0c          	mov    %eax,0xc(%esp)
+ 7e4:	89 54 24 08          	mov    %edx,0x8(%esp)
+ 7e8:	89 4c 24 04          	mov    %ecx,0x4(%esp)
+ 7ec:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
+ 7f3:	e8 38 04 00 00       	call   c30 <printf>
+ 7f8:	eb a6                	jmp    7a0 <test_starvation_helper+0x60>
+ 7fa:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
         if (pid_arr[j] != 0) {
             result = result && assert_equals(0, kill(pid_arr[j]), "failed to kill child (yes it does sound horrible)");
             wait(null);
         }
     }
     policy(ROUND_ROBIN);
- 760:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
- 767:	e8 ec 03 00 00       	call   b58 <policy>
+ 800:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
+ 807:	e8 4c 03 00 00       	call   b58 <policy>
     return result;
 }
- 76c:	83 c4 5c             	add    $0x5c,%esp
- 76f:	89 f0                	mov    %esi,%eax
- 771:	5b                   	pop    %ebx
- 772:	5e                   	pop    %esi
- 773:	5f                   	pop    %edi
- 774:	5d                   	pop    %ebp
- 775:	c3                   	ret    
- 776:	8d 76 00             	lea    0x0(%esi),%esi
- 779:	8d bc 27 00 00 00 00 	lea    0x0(%edi,%eiz,1),%edi
+ 80c:	83 c4 5c             	add    $0x5c,%esp
+ 80f:	89 f0                	mov    %esi,%eax
+ 811:	5b                   	pop    %ebx
+ 812:	5e                   	pop    %esi
+ 813:	5f                   	pop    %edi
+ 814:	5d                   	pop    %ebp
+ 815:	c3                   	ret    
+ 816:	8d 76 00             	lea    0x0(%esi),%esi
+ 819:	8d bc 27 00 00 00 00 	lea    0x0(%edi,%eiz,1),%edi
     for (int i = 0; i < nProcs; ++i) {
         pid = fork();
         if (pid < 0) {
             break;
         } else if (pid == 0) {
             sleep(5);
- 780:	c7 04 24 05 00 00 00 	movl   $0x5,(%esp)
- 787:	e8 bc 03 00 00       	call   b48 <sleep>
+ 820:	c7 04 24 05 00 00 00 	movl   $0x5,(%esp)
+ 827:	e8 1c 03 00 00       	call   b48 <sleep>
             priority(npriority);
- 78c:	8b 45 0c             	mov    0xc(%ebp),%eax
- 78f:	89 04 24             	mov    %eax,(%esp)
- 792:	e8 d1 03 00 00       	call   b68 <priority>
- 797:	eb fe                	jmp    797 <test_starvation_helper+0xf7>
- 799:	8d b4 26 00 00 00 00 	lea    0x0(%esi,%eiz,1),%esi
+ 82c:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 82f:	89 04 24             	mov    %eax,(%esp)
+ 832:	e8 31 03 00 00       	call   b68 <priority>
+ 837:	eb fe                	jmp    837 <test_starvation_helper+0xf7>
+ 839:	8d b4 26 00 00 00 00 	lea    0x0(%esi,%eiz,1),%esi
 
-000007a0 <test_accumulator>:
+00000840 <test_accumulator>:
 }
 
 /**
  * test the growth of accumulator
  */
 boolean test_accumulator() {
- 7a0:	55                   	push   %ebp
-    return test_starvation_helper(PRIORITY, 2);
- 7a1:	b8 02 00 00 00       	mov    $0x2,%eax
-}
-
-/**
- * test the growth of accumulator
- */
-boolean test_accumulator() {
- 7a6:	89 e5                	mov    %esp,%ebp
- 7a8:	83 ec 18             	sub    $0x18,%esp
-    return test_starvation_helper(PRIORITY, 2);
- 7ab:	89 44 24 04          	mov    %eax,0x4(%esp)
- 7af:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
- 7b6:	e8 e5 fe ff ff       	call   6a0 <test_starvation_helper>
-}
- 7bb:	c9                   	leave  
- 7bc:	c3                   	ret    
- 7bd:	8d 76 00             	lea    0x0(%esi),%esi
-
-000007c0 <test_starvation>:
-
-/** I hope this does test the case of
-   starvation in extended priority
-   (where the priority is 0)
-*/
-boolean test_starvation() {
- 7c0:	55                   	push   %ebp
-    return test_starvation_helper(EXTENED_PRIORITY, 0);
- 7c1:	31 c0                	xor    %eax,%eax
-
-/** I hope this does test the case of
-   starvation in extended priority
-   (where the priority is 0)
-*/
-boolean test_starvation() {
- 7c3:	89 e5                	mov    %esp,%ebp
- 7c5:	83 ec 18             	sub    $0x18,%esp
-    return test_starvation_helper(EXTENED_PRIORITY, 0);
- 7c8:	89 44 24 04          	mov    %eax,0x4(%esp)
- 7cc:	c7 04 24 03 00 00 00 	movl   $0x3,(%esp)
- 7d3:	e8 c8 fe ff ff       	call   6a0 <test_starvation_helper>
-}
- 7d8:	c9                   	leave  
- 7d9:	c3                   	ret    
- 7da:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
-
-000007e0 <test_performance_round_robin>:
-
-
-boolean test_performance_round_robin() {
- 7e0:	55                   	push   %ebp
- 7e1:	89 e5                	mov    %esp,%ebp
- 7e3:	83 ec 18             	sub    $0x18,%esp
-    return test_performance_helper(null);
- 7e6:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
- 7ed:	e8 fe fd ff ff       	call   5f0 <test_performance_helper>
-}
- 7f2:	c9                   	leave  
- 7f3:	c3                   	ret    
- 7f4:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
- 7fa:	8d bf 00 00 00 00    	lea    0x0(%edi),%edi
-
-00000800 <test_performance_priority>:
-
-boolean test_performance_priority() {
- 800:	55                   	push   %ebp
- 801:	89 e5                	mov    %esp,%ebp
- 803:	53                   	push   %ebx
- 804:	83 ec 24             	sub    $0x24,%esp
-    policy(PRIORITY);
- 807:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
- 80e:	e8 45 03 00 00       	call   b58 <policy>
-    int npriority = 2;
-    boolean result = test_performance_helper(&npriority);
- 813:	8d 45 f4             	lea    -0xc(%ebp),%eax
- 816:	89 04 24             	mov    %eax,(%esp)
-    return test_performance_helper(null);
-}
-
-boolean test_performance_priority() {
-    policy(PRIORITY);
-    int npriority = 2;
- 819:	c7 45 f4 02 00 00 00 	movl   $0x2,-0xc(%ebp)
-    boolean result = test_performance_helper(&npriority);
- 820:	e8 cb fd ff ff       	call   5f0 <test_performance_helper>
-    policy(ROUND_ROBIN);
- 825:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
-}
-
-boolean test_performance_priority() {
-    policy(PRIORITY);
-    int npriority = 2;
-    boolean result = test_performance_helper(&npriority);
- 82c:	89 c3                	mov    %eax,%ebx
-    policy(ROUND_ROBIN);
- 82e:	e8 25 03 00 00       	call   b58 <policy>
-    return result;
-
-}
- 833:	83 c4 24             	add    $0x24,%esp
- 836:	89 d8                	mov    %ebx,%eax
- 838:	5b                   	pop    %ebx
- 839:	5d                   	pop    %ebp
- 83a:	c3                   	ret    
- 83b:	90                   	nop
- 83c:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
-
-00000840 <test_performance_extended_priority>:
-
-boolean test_performance_extended_priority() {
  840:	55                   	push   %ebp
- 841:	89 e5                	mov    %esp,%ebp
- 843:	53                   	push   %ebx
- 844:	83 ec 24             	sub    $0x24,%esp
-    policy(EXTENED_PRIORITY);
- 847:	c7 04 24 03 00 00 00 	movl   $0x3,(%esp)
- 84e:	e8 05 03 00 00       	call   b58 <policy>
-    int npriority = 0;
-    boolean result = test_performance_helper(&npriority);
- 853:	8d 45 f4             	lea    -0xc(%ebp),%eax
- 856:	89 04 24             	mov    %eax,(%esp)
-
+    return test_starvation_helper(PRIORITY, 2);
+ 841:	b8 02 00 00 00       	mov    $0x2,%eax
 }
 
-boolean test_performance_extended_priority() {
-    policy(EXTENED_PRIORITY);
-    int npriority = 0;
- 859:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
-    boolean result = test_performance_helper(&npriority);
- 860:	e8 8b fd ff ff       	call   5f0 <test_performance_helper>
-    policy(ROUND_ROBIN);
- 865:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
+/**
+ * test the growth of accumulator
+ */
+boolean test_accumulator() {
+ 846:	89 e5                	mov    %esp,%ebp
+ 848:	83 ec 18             	sub    $0x18,%esp
+    return test_starvation_helper(PRIORITY, 2);
+ 84b:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 84f:	c7 04 24 02 00 00 00 	movl   $0x2,(%esp)
+ 856:	e8 e5 fe ff ff       	call   740 <test_starvation_helper>
 }
+ 85b:	c9                   	leave  
+ 85c:	c3                   	ret    
+ 85d:	8d 76 00             	lea    0x0(%esi),%esi
 
-boolean test_performance_extended_priority() {
-    policy(EXTENED_PRIORITY);
-    int npriority = 0;
-    boolean result = test_performance_helper(&npriority);
- 86c:	89 c3                	mov    %eax,%ebx
-    policy(ROUND_ROBIN);
- 86e:	e8 e5 02 00 00       	call   b58 <policy>
-    return result;
+00000860 <test_starvation>:
 
+/** I hope this does test the case of
+   starvation in extended priority
+   (where the priority is 0)
+*/
+boolean test_starvation() {
+ 860:	55                   	push   %ebp
+    return test_starvation_helper(EXTENED_PRIORITY, 0);
+ 861:	31 c0                	xor    %eax,%eax
+
+/** I hope this does test the case of
+   starvation in extended priority
+   (where the priority is 0)
+*/
+boolean test_starvation() {
+ 863:	89 e5                	mov    %esp,%ebp
+ 865:	83 ec 18             	sub    $0x18,%esp
+    return test_starvation_helper(EXTENED_PRIORITY, 0);
+ 868:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 86c:	c7 04 24 03 00 00 00 	movl   $0x3,(%esp)
+ 873:	e8 c8 fe ff ff       	call   740 <test_starvation_helper>
 }
- 873:	83 c4 24             	add    $0x24,%esp
- 876:	89 d8                	mov    %ebx,%eax
- 878:	5b                   	pop    %ebx
- 879:	5d                   	pop    %ebp
- 87a:	c3                   	ret    
- 87b:	66 90                	xchg   %ax,%ax
- 87d:	66 90                	xchg   %ax,%ax
- 87f:	90                   	nop
+ 878:	c9                   	leave  
+ 879:	c3                   	ret    
+ 87a:	66 90                	xchg   %ax,%ax
+ 87c:	66 90                	xchg   %ax,%ax
+ 87e:	66 90                	xchg   %ax,%ax
 
 00000880 <strcpy>:
 #include "user.h"
@@ -2211,7 +2216,7 @@ printint(int fd, int xx, int base, int sgn)
  bc2:	31 d2                	xor    %edx,%edx
  bc4:	f7 f6                	div    %esi
  bc6:	8d 4f 01             	lea    0x1(%edi),%ecx
- bc9:	0f b6 92 48 11 00 00 	movzbl 0x1148(%edx),%edx
+ bc9:	0f b6 92 5c 11 00 00 	movzbl 0x115c(%edx),%edx
   }while((x /= base) != 0);
  bd0:	85 c0                	test   %eax,%eax
     x = xx;
@@ -2509,7 +2514,7 @@ putc(int fd, char c)
  d58:	89 45 d0             	mov    %eax,-0x30(%ebp)
         if(s == 0)
           s = "(null)";
- d5b:	b8 41 11 00 00       	mov    $0x1141,%eax
+ d5b:	b8 54 11 00 00       	mov    $0x1154,%eax
  d60:	85 db                	test   %ebx,%ebx
  d62:	0f 44 d8             	cmove  %eax,%ebx
         while(*s != 0){
@@ -2647,7 +2652,7 @@ free(void *ap)
 
   bp = (Header*)ap - 1;
   for(p = freep; !(bp > p && bp < p->s.ptr); p = p->s.ptr)
- e11:	a1 c8 16 00 00       	mov    0x16c8,%eax
+ e11:	a1 dc 16 00 00       	mov    0x16dc,%eax
 static Header base;
 static Header *freep;
 
@@ -2740,7 +2745,7 @@ free(void *ap)
   } else
     p->s.ptr = bp;
   freep = p;
- e6a:	a3 c8 16 00 00       	mov    %eax,0x16c8
+ e6a:	a3 dc 16 00 00       	mov    %eax,0x16dc
 }
  e6f:	5e                   	pop    %esi
  e70:	5f                   	pop    %edi
@@ -2772,7 +2777,7 @@ free(void *ap)
   } else
     p->s.ptr = bp;
   freep = p;
- e8f:	a3 c8 16 00 00       	mov    %eax,0x16c8
+ e8f:	a3 dc 16 00 00       	mov    %eax,0x16dc
     bp->s.size += p->s.ptr->s.size;
     bp->s.ptr = p->s.ptr->s.ptr;
   } else
@@ -2815,7 +2820,7 @@ malloc(uint nbytes)
   nunits = (nbytes + sizeof(Header) - 1)/sizeof(Header) + 1;
  eb9:	8b 45 08             	mov    0x8(%ebp),%eax
   if((prevp = freep) == 0){
- ebc:	8b 15 c8 16 00 00    	mov    0x16c8,%edx
+ ebc:	8b 15 dc 16 00 00    	mov    0x16dc,%edx
 malloc(uint nbytes)
 {
   Header *p, *prevp;
@@ -2863,7 +2868,7 @@ malloc(uint nbytes)
       return (void*)(p + 1);
     }
     if(p == freep)
- f09:	39 05 c8 16 00 00    	cmp    %eax,0x16c8
+ f09:	39 05 dc 16 00 00    	cmp    %eax,0x16dc
  f0f:	89 c2                	mov    %eax,%edx
  f11:	75 ed                	jne    f00 <malloc+0x50>
   char *p;
@@ -2886,7 +2891,7 @@ malloc(uint nbytes)
  f26:	89 04 24             	mov    %eax,(%esp)
  f29:	e8 e2 fe ff ff       	call   e10 <free>
   return freep;
- f2e:	8b 15 c8 16 00 00    	mov    0x16c8,%edx
+ f2e:	8b 15 dc 16 00 00    	mov    0x16dc,%edx
       }
       freep = prevp;
       return (void*)(p + 1);
@@ -2918,7 +2923,7 @@ malloc(uint nbytes)
  f4c:	89 78 04             	mov    %edi,0x4(%eax)
       }
       freep = prevp;
- f4f:	89 15 c8 16 00 00    	mov    %edx,0x16c8
+ f4f:	89 15 dc 16 00 00    	mov    %edx,0x16dc
       return (void*)(p + 1);
  f55:	83 c0 08             	add    $0x8,%eax
     }
@@ -2948,8 +2953,8 @@ malloc(uint nbytes)
   nunits = (nbytes + sizeof(Header) - 1)/sizeof(Header) + 1;
   if((prevp = freep) == 0){
     base.s.ptr = freep = prevp = &base;
- f66:	b8 cc 16 00 00       	mov    $0x16cc,%eax
- f6b:	ba cc 16 00 00       	mov    $0x16cc,%edx
+ f66:	b8 e0 16 00 00       	mov    $0x16e0,%eax
+ f6b:	ba e0 16 00 00       	mov    $0x16e0,%edx
     base.s.size = 0;
  f70:	31 c9                	xor    %ecx,%ecx
   Header *p, *prevp;
@@ -2958,16 +2963,16 @@ malloc(uint nbytes)
   nunits = (nbytes + sizeof(Header) - 1)/sizeof(Header) + 1;
   if((prevp = freep) == 0){
     base.s.ptr = freep = prevp = &base;
- f72:	a3 c8 16 00 00       	mov    %eax,0x16c8
+ f72:	a3 dc 16 00 00       	mov    %eax,0x16dc
     base.s.size = 0;
- f77:	b8 cc 16 00 00       	mov    $0x16cc,%eax
+ f77:	b8 e0 16 00 00       	mov    $0x16e0,%eax
   Header *p, *prevp;
   uint nunits;
 
   nunits = (nbytes + sizeof(Header) - 1)/sizeof(Header) + 1;
   if((prevp = freep) == 0){
     base.s.ptr = freep = prevp = &base;
- f7c:	89 15 cc 16 00 00    	mov    %edx,0x16cc
+ f7c:	89 15 e0 16 00 00    	mov    %edx,0x16e0
     base.s.size = 0;
- f82:	89 0d d0 16 00 00    	mov    %ecx,0x16d0
+ f82:	89 0d e4 16 00 00    	mov    %ecx,0x16e4
  f88:	e9 4d ff ff ff       	jmp    eda <malloc+0x2a>

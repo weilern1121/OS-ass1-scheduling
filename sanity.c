@@ -283,12 +283,12 @@ int main(void) {
     //run_test(&test_detach, "detach");
     //run_test(&test_round_robin_policy, "round robin policy");
     //run_test(&test_priority_policy, "priority policy");
-    run_test(&test_extended_priority_policy, "extended priority policy");
-    run_test(&test_accumulator, "accumulator");
+    //run_test(&test_extended_priority_policy, "extended priority policy");
+    //run_test(&test_accumulator, "accumulator");
     //run_test(&test_starvation, "starvation");
-    //run_test(&test_performance_round_robin, "performance round robin");
-    //run_test(&test_performance_priority, "performance priority");
-    //run_test(&test_performance_extended_priority, "performance extended priority");
+    run_test(&test_performance_round_robin, "performance round robin");
+    run_test(&test_performance_priority, "performance priority");
+    run_test(&test_performance_extended_priority, "performance extended priority");
     exit(0);
 }
 
