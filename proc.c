@@ -18,7 +18,7 @@ long long getAccumulator(struct proc *p) {
 }
 
 long long getMinAccumulator(){
-    long long tmp1=999999999999999,tmp2=999999999999999;
+    long long tmp1=0,tmp2=0;
     boolean a=pq.getMinAccumulator(&tmp1);
     boolean b=rpholder.getMinAccumulator(&tmp2);
     if(a&&b){
@@ -220,12 +220,12 @@ userinit(void)
 
     p->state = RUNNABLE;
     //TODO- roundrobin addition
-    if(currpolicy==1)
-        rrq.enqueue(p);
     //TODO- priority queue addition
     p->priority=5;
     p->RUNNABLE_wait_time=0;    //surely 0 because this is the first initialized process
     p->accumulator=0;          //surely 0 because this is the first initialized process
+    if(currpolicy==1)
+        rrq.enqueue(p);
     if(currpolicy==2 || currpolicy==3)
         pq.put(p);
 
@@ -802,15 +802,20 @@ detach(int pid)
 void
 priority(int prio){
     struct proc *curproc = myproc();
-    if(currpolicy==2){
-        if(prio>0 &&prio<11)
-            curproc->priority=prio;
+    if( curproc != null ) {
+        acquire(&ptable.lock);
+
+        if (currpolicy == 2) {
+            if (prio > 0 && prio < 11)
+                curproc->priority = prio;
+        }
+        if (currpolicy == 3) {
+            if (prio >= 0 && prio < 11)
+                curproc->priority = prio;
+        }
+
+        release(&ptable.lock);
     }
-    if(currpolicy==3){
-        if(prio>-1 &&prio<11)
-            curproc->priority=prio;
-    }
-    //curproc->priority=prio;
 }
 
 
@@ -846,8 +851,9 @@ policy(int num){
     switch (currpolicy){
         case 1:
             if(num==2 || num==3){
-                if(!rrq.switchToPriorityQueuePolicy())
-               //     panic("error in switch from rouncrobin to priority queue\n");
+                rrq.switchToPriorityQueuePolicy();
+                //if(!rrq.switchToPriorityQueuePolicy())
+                //    panic("error in switch from rouncrobin to priority queue\n");
                 //if num=2 ->check that there are no priority=0
                 if(num==2)
                     priorityUnExtended();
@@ -873,6 +879,7 @@ policy(int num){
             break;
     }
     release(&ptable.lock);
+
 }
 
 

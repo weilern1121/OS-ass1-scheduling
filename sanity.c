@@ -122,7 +122,7 @@ boolean test_detach() {
 }
 
 boolean test_policy_helper(int *priority_mod, int policy) {
-    int nProcs = 15;
+    int nProcs = 10;
     int pid, status;
     boolean result = true;
     for (int i = 0; i < nProcs; ++i) {
@@ -166,6 +166,7 @@ boolean test_extended_priority_policy() {
     int priority_mod = 10;
     policy(EXTENED_PRIORITY);
     boolean result = test_policy_helper(&priority_mod, EXTENED_PRIORITY);
+
     policy(ROUND_ROBIN);
     return result;
 }
@@ -281,8 +282,8 @@ boolean test_performance_extended_priority() {
 
 
 int main(void) {
-    run_test(&test_exit_wait, "exit&wait");
-    run_test(&test_detach, "detach");
+    //run_test(&test_exit_wait, "exit&wait");
+    //run_test(&test_detach, "detach");
     run_test(&test_round_robin_policy, "round robin policy");
     run_test(&test_priority_policy, "priority policy");
     run_test(&test_extended_priority_policy, "extended priority policy");
@@ -302,54 +303,3 @@ int main(void) {
 
 
 
-
-
-
-
-
-
-/*
-#include "types.h"
-#include "stat.h"
-#include "user.h"
-
-int
-main(void)
-{
-//    int pid=fork();
-//    if(pid==0){
-//        sleep(100);
-//        exit(5);
-//    }
-//    else{
-//        int *status = malloc(1);
-//        wait(status);
-//        printf(1,"########      exit status after is: %d\n", *status);
-//        //free(status);
-//    }
-//    exit(0);
-
-
-    int pid;
-    int first_status=-2;
-    int second_status=-2;
-    int third_status=-2;
-    pid = fork(); // the child pid is 99
-    if(pid > 0) {
-        first_status = detach(pid); // status = 0
-        second_status = detach(pid); // status = -1, because this process has already
-                                    // detached this child, and it doesn’t have
-                                    // this child anymore.
-        third_status = detach(77); // status = -1, because this process doesn’t
-                                    // have a child with this pid.
-        sleep(100);
-    }
-    printf(2,"first_status= %d, should be 0.\n",first_status);
-    printf(2,"second_status= %d, should be -1.\n"
-             "(because this process has already\n"
-             "detached this child, and it doesn’t have\n"
-             "this child anymore).\n",second_status);
-    printf(2,"third_status= %d, should be -1 \n  (because this process doesn’t"
-             " have a child with this pid.)  .\n",third_status);
-    exit(0);
-}*/
