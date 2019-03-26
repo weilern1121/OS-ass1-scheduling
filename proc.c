@@ -58,7 +58,7 @@ void
 update_procs_performances(void)
 {
     struct proc *p;
-
+    counter++;
 
     acquire(&ptable.lock);
 
@@ -465,9 +465,9 @@ wait(int *status)
 void
 scheduler(void)
 {
-    struct proc *p;
+    struct proc *p=myproc();
     struct cpu *c = mycpu();
-    struct proc *max_p=0;
+    struct proc *max_p=myproc();
     c->proc = 0;
     //counter=0;
 
@@ -477,7 +477,6 @@ scheduler(void)
         // Loop over process table looking for process to run.
         acquire(&ptable.lock);
 
-        counter++;
 
         //policies cases - depends on the global variable currpolicy
         switch (currpolicy) {

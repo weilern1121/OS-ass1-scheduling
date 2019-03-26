@@ -180,7 +180,7 @@ boolean test_performance_helper(int *npriority) {
         wait_stat(&status1, &perf2);
         print_perf(&perf2);
     } else {
-        for (int a = 0; a < 100; ++a) {
+        for (int a = 0; a < 10; ++a) {
             int pid;
             struct perf perf1;
 
@@ -279,13 +279,13 @@ boolean test_performance_extended_priority() {
 
 
 int main(void) {
-    //run_test(&test_exit_wait, "exit&wait");
-    //run_test(&test_detach, "detach");
-    //run_test(&test_round_robin_policy, "round robin policy");
-    //run_test(&test_priority_policy, "priority policy");
-    //run_test(&test_extended_priority_policy, "extended priority policy");
-    //run_test(&test_accumulator, "accumulator");
-    //run_test(&test_starvation, "starvation");
+   /* run_test(&test_exit_wait, "exit&wait");
+    run_test(&test_detach, "detach");
+    run_test(&test_round_robin_policy, "round robin policy");
+    run_test(&test_priority_policy, "priority policy");
+    run_test(&test_extended_priority_policy, "extended priority policy");
+    run_test(&test_accumulator, "accumulator");
+    run_test(&test_starvation, "starvation");*/
     run_test(&test_performance_round_robin, "performance round robin");
     run_test(&test_performance_priority, "performance priority");
     run_test(&test_performance_extended_priority, "performance extended priority");

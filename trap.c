@@ -51,7 +51,8 @@ trap(struct trapframe *tf)
     if(cpuid() == 0){
       acquire(&tickslock);
       ticks++;
-      wakeup(&ticks);
+
+        wakeup(&ticks);
 
       update_procs_performances();
 
