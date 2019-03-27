@@ -7,6 +7,28 @@
 #include "user.h"
 #include "fcntl.h"
 
+void execute(char * command, char** args);
+
+
+void execute(char * command, char** args){
+    int pid;
+
+    if((pid = fork()) == 0){
+        exec(command, args);
+        printf(1, "exec %s failed\n", command);
+    }
+    else if(pid > 0){
+        //printf(1,"waiting for exec of %s to finish\n",command);
+        wait(null);
+        //printf(1,"%s exec exited\n",command);
+    }
+    else{
+        printf(1,"fork failed\n");
+    }
+
+}
+
+
 #define ROUND_ROBIN 1
 #define PRIORITY 2
 #define EXTENED_PRIORITY 3
@@ -278,17 +300,149 @@ boolean test_performance_extended_priority() {
 }
 
 
-int main(void) {
-   /* run_test(&test_exit_wait, "exit&wait");
+/*int main(void) {
+    run_test(&test_exit_wait, "exit&wait");
     run_test(&test_detach, "detach");
     run_test(&test_round_robin_policy, "round robin policy");
     run_test(&test_priority_policy, "priority policy");
     run_test(&test_extended_priority_policy, "extended priority policy");
     run_test(&test_accumulator, "accumulator");
-    run_test(&test_starvation, "starvation");*/
+    run_test(&test_starvation, "starvation");
     run_test(&test_performance_round_robin, "performance round robin");
     run_test(&test_performance_priority, "performance priority");
     run_test(&test_performance_extended_priority, "performance extended priority");
+    exit(0);
+
+}*/
+
+
+int main(int argc, char *argv[]){
+    int fd;
+    int writed;
+
+    printf(1,"opening path\n");
+    fd = open("/path",O_WRONLY);
+
+    if(fd < 0){
+        printf(1,"Error in opening path file\n");
+        exit(0);
+    }
+
+    const char * path = "/:/bin/:/hello/world/path/:/under/world/path";
+
+    printf(1,"writing to path\n");
+    writed = write(fd,path,strlen(path));
+
+    if(writed != strlen(path)){
+        printf(1,"error in writing to path, %d were written\n",writed);
+    }
+
+    printf(1,"closing path file\n");
+    close(fd);
+
+    char * command;
+    char *args[4];
+
+    printf(1,"creating /bin/ path\n");
+    args[0] = "/mkdir";
+    args[1] = "/bin/";
+    args[2] = 0;
+    command = "/mkdir";
+    execute(command,args);
+
+    printf(1,"creating /hello path\n");
+    args[0] = "/mkdir";
+    args[1] = "/hello";
+    args[2] = 0;
+    command = "/mkdir";
+    execute(command,args);
+
+    printf(1,"creating /hello/world path\n");
+    args[0] = "/mkdir";
+    args[1] = "/hello/world";
+    args[2] = 0;
+    command = "/mkdir";
+    execute(command,args);
+
+    printf(1,"creating /hello/world/path path\n");
+    args[0] = "/mkdir";
+    args[1] = "/hello/world/path";
+    args[2] = 0;
+    command = "/mkdir";
+    execute(command,args);
+
+    printf(1,"creating /under path\n");
+    args[0] = "/mkdir";
+    args[1] = "/under";
+    args[2] = 0;
+    command = "/mkdir";
+    execute(command,args);
+
+    printf(1,"creating /under/world path\n");
+    args[0] = "/mkdir";
+    args[1] = "/under/world";
+    args[2] = 0;
+    command = "/mkdir";
+    execute(command,args);
+
+    printf(1,"creating /under/world/path path\n");
+    args[0] = "/mkdir";
+    args[1] = "/under/world/path";
+    args[2] = 0;
+    command = "/mkdir";
+    execute(command,args);
+
+    printf(1,"creating /notIn path\n");
+    args[0] = "/mkdir";
+    args[1] = "/notIn";
+    args[2] = 0;
+    command = "/mkdir";
+    execute(command,args);
+
+    printf(1,"creating /notIn/path path\n");
+    args[0] = "/mkdir";
+    args[1] = "/notIn/path";
+    args[2] = 0;
+    command = "/mkdir";
+    execute(command,args);
+
+    printf(1,"##################exiting\n");
+
+
+    printf(1,"copying cat to /notIn/path/cat\n");
+    args[0] = "/ln";
+    args[1] = "/cat";
+    args[2] = "/notIn/path/cat";
+    args[3] = 0;
+    command = "/ln";
+    execute(command,args);
+
+    printf(1,"copying echo to /notIn/path/echo\n");
+    args[0] = "/ln";
+    args[1] = "/echo";
+    args[2] = "/notIn/path/echo";
+    args[3] = 0;
+    command = "/ln";
+    execute(command,args);
+
+    printf(1,"removing /cat\n");
+    args[0] = "/rm";
+    args[1] = "/cat";
+    args[2] = 0;
+    command = "/rm";
+    execute(command,args);
+
+    printf(1,"removing /echo\n");
+    args[0] = "/rm";
+    args[1] = "/echo";
+    args[2] = 0;
+    command = "/rm";
+    execute(command,args);
+
+    printf(1,"###########################3exiting\n");
+
+
+
     exit(0);
 }
 

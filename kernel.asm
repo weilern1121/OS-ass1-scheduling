@@ -13610,7 +13610,7 @@ sys_sleep(void)
       release(&tickslock);
       return -1;
     }
-    sleep(&ticks, &tickslock);
+    sleep((void *) &ticks, &tickslock);
 80106d90:	b8 c0 77 11 80       	mov    $0x801177c0,%eax
 80106d95:	89 44 24 04          	mov    %eax,0x4(%esp)
 80106d99:	c7 04 24 00 80 11 80 	movl   $0x80118000,(%esp)

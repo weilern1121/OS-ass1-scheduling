@@ -126,7 +126,7 @@ execWithPath(char *path, char **argv)
         //get the concated string of the curr_path @ path (i.e the order)
         char* str3=malloc ((strlen(str2) + strlen(path) - 1));
         str3=strconcat(str2,path,str3);
-        //printf(2,"str3= %s \n",str3);
+        printf(3,"str3= %s \tstr2= %s\n",str3,str2);
 
         exec( str3 , argv );
         // if got here- exec failed
@@ -232,7 +232,8 @@ getcmd(char *buf, int nbuf)
 int
 main(void)
 {
-    static char buf[100];
+    //static char buf[100];
+    char* buf = (char*)malloc(8000);
     int fd;
 
     // Ensure that three file descriptors are open.
