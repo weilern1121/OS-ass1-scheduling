@@ -53,7 +53,7 @@ struct backcmd {
 int fork1(void);  // Fork but panics on failure.
 void panic(char*);
 struct cmd *parsecmd(char*);
-char PATH[512]; // YOAV ADD PATH ENV VAR
+char PATH[512]; // PATH ENV VAR
 
 void
 swap( int a , int b , char *str)
@@ -131,10 +131,10 @@ execWithPath(char *path, char **argv)
         exec( str3 , argv );
         // if got here- exec failed
         // than, we keep iterate on path and free concated path
-        free(str2);
-        free(str3);
+        //free(str2);
+        //free(str3);
     }
-    free(curr_path);
+    //free(curr_path);
     return -1;
 }
 
@@ -142,6 +142,19 @@ execWithPath(char *path, char **argv)
 void
 runcmd(struct cmd *cmd)
 {
+
+
+    // read the PATH
+    int fd2;
+
+    if((fd2 = open("path", O_RDWR)) >= 0){
+        if( read(fd2, PATH, sizeof(PATH)) < 0 ){
+            printf(1, "error: read from path file failed\n");
+            exit(0);
+        }
+
+    }
+
     int p[2];
     struct backcmd *bcmd;
     struct execcmd *ecmd;
@@ -161,10 +174,30 @@ runcmd(struct cmd *cmd)
             if(ecmd->argv[0] == 0)
                 exit(0);
             exec(ecmd->argv[0], ecmd->argv);
-            // from here
-            execWithPath(ecmd->argv[0], ecmd->argv);
-            // till here
+
+            char *curr_path = malloc(strlen(PATH));
+            char* path=ecmd->argv[0];
+            strcpy( curr_path , PATH );
+            while( curr_path != NULL )
+            {
+                //get the string until the delimiter
+                char* str2= malloc(100);
+                str2=strcpyuntildelimiter(str2,curr_path,':');
+
+                //delete the first part until delimiter from th e path
+                curr_path=strchr(curr_path,':');
+                if(curr_path!=NULL)
+                    curr_path++;
+                //get the concated string of the curr_path @ path (i.e the order)
+                char* str3=malloc ((strlen(str2) + strlen(path) - 1));
+                str3=strconcat(str2,path,str3);
+                ecmd->argv[0]=str3;
+                exec( ecmd->argv[0] , ecmd->argv );
+                // if got here- exec failed
+                // than, we keep iterate on path
+            }
             printf(2, "exec %s failed\n", ecmd->argv[0]);
+
             break;
 
         case REDIR:
@@ -232,8 +265,8 @@ getcmd(char *buf, int nbuf)
 int
 main(void)
 {
-    //static char buf[100];
-    char* buf = (char*)malloc(8000);
+    static char buf[500];
+    //char* buf = (char*)malloc(8000);
     int fd;
 
     // Ensure that three file descriptors are open.
@@ -245,17 +278,6 @@ main(void)
     }
 
 
-    // from here
-    int fd2;
-
-    if((fd2 = open("path", O_RDWR)) >= 0){
-        if( read(fd2, PATH, sizeof(PATH)) < 0 ){
-            printf(1, "error: read from path file failed\n");
-            exit(0);
-        }
-
-    }
-    // till here
 
 
     // Read and run input commands.

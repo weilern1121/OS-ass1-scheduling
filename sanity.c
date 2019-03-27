@@ -15,6 +15,9 @@ void execute(char * command, char** args){
 
     if((pid = fork()) == 0){
         exec(command, args);
+
+        printf(1, "args0= %s\n",args[0]);
+        printf(1, "args1= %s\n",args[1]);
         printf(1, "exec %s failed\n", command);
     }
     else if(pid > 0){
@@ -439,7 +442,28 @@ int main(int argc, char *argv[]){
     command = "/rm";
     execute(command,args);
 
-    printf(1,"###########################3exiting\n");
+    printf(1,"########\tremoved cat+echo from root\t###################\n");
+
+    printf(1,"copying /notIn/path/cat to /bin/cat\n");
+    args[0] = "/ln";
+    args[1] = "/notIn/path/cat";
+    args[2] = "/bin/cat";
+    args[3] = 0;
+    command = "/ln";
+    execute(command,args);
+
+    printf(1,"copying /notIn/path/echo to /hello/world/path/echo\n");
+    args[0] = "/ln";
+    args[1] = "notIn/path/echo";
+    args[2] = "/hello/world/path/echo";
+    args[3] = 0;
+    command = "/ln";
+    execute(command,args);
+
+    printf(1,"exiting\n");
+    printf(2,"path= %s\n",path);
+
+
 
 
 
