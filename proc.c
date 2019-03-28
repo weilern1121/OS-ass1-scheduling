@@ -376,7 +376,7 @@ exit(int status)
 
     acquire(&ptable.lock);
 
-    // TODO update termination time
+    // update termination time
     acquire(&tickslock);
     curproc->proc_perf.ttime = ticks;
     release(&tickslock);
@@ -761,6 +761,10 @@ kill(int pid)
             // Wake process from sleep if necessary.
             if(p->state == SLEEPING){
                 p->state = RUNNABLE;
+                if(currpolicy == 2 || currpolicy == 3)
+                {
+                    updateAccumulator(p);
+                }
                 pushToSpecificQueue(p);
             }
             release(&ptable.lock);
@@ -884,7 +888,7 @@ policy(int num){
     if(num>3 || num<1)
         return; //currpolicy get the default policy
     // Enable interrupts on this processor.
-    sti();
+    //sti();
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
     switch (currpolicy){
@@ -895,7 +899,14 @@ policy(int num){
                 //    panic("error in switch from rouncrobin to priority queue\n");
                 //if num=2 ->check that there are no priority=0
                 if(num==2)
-                    priorityUnExtended();
+                    //priorityUnExtended();
+                {
+                    struct proc *p;
+                    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+                        if (p->priority == 0)
+                            p->priority = 1;
+                    }
+                }
             }
             break;
 
@@ -910,7 +921,12 @@ policy(int num){
                 switchToRoundRobin();
             }
             if(num==2){
-                priorityUnExtended();
+                //priorityUnExtended();
+                struct proc *p;
+                for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+                    if (p->priority == 0)
+                        p->priority = 1;
+                }
             }
             break;
         default:

@@ -13,19 +13,21 @@
   <component name="ChangeListManager">
     <list default="true" id="27da821e-cebc-4520-93d2-ae8102e4f0a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_19/makefileError.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_19/testOutput.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project_Test/Tests/test_19/testOutput.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sanity" beforeDir="false" afterPath="$PROJECT_DIR$/_sanity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sh" beforeDir="false" afterPath="$PROJECT_DIR$/_sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_14/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_14/makefileCommandForDebug.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_14/testOutput.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_usertests" beforeDir="false" afterPath="$PROJECT_DIR$/_usertests" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fs.img" beforeDir="false" afterPath="$PROJECT_DIR$/fs.img" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity.asm" beforeDir="false" afterPath="$PROJECT_DIR$/sanity.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity.c" beforeDir="false" afterPath="$PROJECT_DIR$/sanity.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity.o" beforeDir="false" afterPath="$PROJECT_DIR$/sanity.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity.sym" beforeDir="false" afterPath="$PROJECT_DIR$/sanity.sym" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sh.asm" beforeDir="false" afterPath="$PROJECT_DIR$/sh.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sh.c" beforeDir="false" afterPath="$PROJECT_DIR$/sh.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sh.o" beforeDir="false" afterPath="$PROJECT_DIR$/sh.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sh.sym" beforeDir="false" afterPath="$PROJECT_DIR$/sh.sym" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel" beforeDir="false" afterPath="$PROJECT_DIR$/kernel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel.asm" beforeDir="false" afterPath="$PROJECT_DIR$/kernel.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel.sym" beforeDir="false" afterPath="$PROJECT_DIR$/kernel.sym" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proc.c" beforeDir="false" afterPath="$PROJECT_DIR$/proc.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proc.o" beforeDir="false" afterPath="$PROJECT_DIR$/proc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedulingTest9.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedulingTest9.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedulingTest9.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedulingTest9.sym" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xv6.img" beforeDir="false" afterPath="$PROJECT_DIR$/xv6.img" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,21 +54,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trap.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sanity.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="9628">
               <caret line="332" selection-start-line="332" selection-end-line="332" />
               <folding>
                 <element signature="e#40#58#0" expanded="true" />
@@ -84,13 +74,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sh.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
+            <state relative-caret-position="-1711">
               <caret line="139" selection-start-line="139" selection-end-line="139" />
               <folding>
                 <element signature="e#11#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/proc.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="759" column="26" selection-start-line="759" selection-start-column="26" selection-end-line="759" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,9 +162,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>case 2</find>
-      <find>cpri</find>
-      <find>argptr</find>
       <find>deta</find>
       <find>de</find>
       <find>pri</find>
@@ -190,6 +189,9 @@
       <find>exec</find>
       <find>execWithPath</find>
       <find>PATH</find>
+      <find>scheduler</find>
+      <find>sti();</find>
+      <find>kill</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,13 +208,13 @@
         <option value="$PROJECT_DIR$/syscall.h" />
         <option value="$PROJECT_DIR$/syscall.c" />
         <option value="$PROJECT_DIR$/user.h" />
-        <option value="$PROJECT_DIR$/proc.c" />
         <option value="$PROJECT_DIR$/sysproc.c" />
         <option value="$PROJECT_DIR$/trap.c" />
         <option value="$PROJECT_DIR$/defs.h" />
         <option value="$PROJECT_DIR$/path" />
         <option value="$PROJECT_DIR$/sanity.c" />
         <option value="$PROJECT_DIR$/sh.c" />
+        <option value="$PROJECT_DIR$/proc.c" />
       </list>
     </option>
   </component>
@@ -298,20 +300,21 @@
       <workItem from="1553685310594" duration="595000" />
       <workItem from="1553693519506" duration="5869000" />
       <workItem from="1553700520869" duration="6624000" />
+      <workItem from="1553787941018" duration="3591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86154000" />
+    <option name="totallyTimeSpent" value="89745000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="925" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.29994467" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3032651" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.15201005" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.15201005" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="CMake" order="3" weight="0.32914573" />
@@ -493,16 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proc.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11078">
-          <caret line="382" selection-start-line="382" selection-end-line="382" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trap.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
@@ -510,6 +503,23 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sanity.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9628">
+          <caret line="332" selection-start-line="332" selection-end-line="332" />
+          <folding>
+            <element signature="e#40#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/path">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -561,29 +571,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/path">
+    <entry file="file://$PROJECT_DIR$/sh.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sanity.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="332" selection-start-line="332" selection-end-line="332" />
+        <state relative-caret-position="-1711">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
           <folding>
-            <element signature="e#40#58#0" expanded="true" />
+            <element signature="e#11#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sh.c">
+    <entry file="file://$PROJECT_DIR$/proc.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="139" selection-start-line="139" selection-end-line="139" />
+        <state relative-caret-position="255">
+          <caret line="759" column="26" selection-start-line="759" selection-start-column="26" selection-end-line="759" selection-end-column="26" />
           <folding>
-            <element signature="e#11#29#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
