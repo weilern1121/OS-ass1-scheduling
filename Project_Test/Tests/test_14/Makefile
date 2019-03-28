@@ -183,9 +183,7 @@ mkfs: mkfs.c fs.h
 # http://www.gnu.org/software/make/manual/html_node/Chained-Rules.html
 .PRECIOUS: %.o
 
-UPROGS=  _pathTest\
-_pathTest4\
-_pathTest5\
+UPROGS=  _schedulingTest9\
 _quitXV6\
 	_cat\
 	_echo\
@@ -306,23 +304,11 @@ tar:
 	(cd /tmp; tar cf - xv6) | gzip >xv6-rev10.tar.gz  # the next one will be 10 (9/17)
 
 .PHONY: dist-test dist
-_pathTest: ulib.o usys.o printf.o umalloc.o
-	gcc -fno-pic -std=gnu99 -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -march=i686 -Werror -fno-omit-frame-pointer 	-fno-stack-protector -fno-pie -no-pie -fno-pic -static 	-fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -march=i686 -Werror -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie  -c -o pathTest.o ./Project_Test/XV6_Tests/pathTest.c
-	ld -m    elf_i386 -N -e main -Ttext 0 -o _pathTest pathTest.o ulib.o usys.o printf.o umalloc.o
-	objdump -S _pathTest > pathTest.asm
-	$(OBJDUMP) -t _pathTest | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > pathTest.sym
-
-_pathTest4: ulib.o usys.o printf.o umalloc.o
-	gcc -fno-pic -std=gnu99 -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -march=i686 -Werror -fno-omit-frame-pointer 	-fno-stack-protector -fno-pie -no-pie -fno-pic -static 	-fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -march=i686 -Werror -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie  -c -o pathTest4.o ./Project_Test/XV6_Tests/pathTest4.c
-	ld -m    elf_i386 -N -e main -Ttext 0 -o _pathTest4 pathTest4.o ulib.o usys.o printf.o umalloc.o
-	objdump -S _pathTest4 > pathTest4.asm
-	$(OBJDUMP) -t _pathTest4 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > pathTest4.sym
-
-_pathTest5: ulib.o usys.o printf.o umalloc.o
-	gcc -fno-pic -std=gnu99 -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -march=i686 -Werror -fno-omit-frame-pointer 	-fno-stack-protector -fno-pie -no-pie -fno-pic -static 	-fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -march=i686 -Werror -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie  -c -o pathTest5.o ./Project_Test/XV6_Tests/pathTest5.c
-	ld -m    elf_i386 -N -e main -Ttext 0 -o _pathTest5 pathTest5.o ulib.o usys.o printf.o umalloc.o
-	objdump -S _pathTest5 > pathTest5.asm
-	$(OBJDUMP) -t _pathTest5 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > pathTest5.sym
+_schedulingTest9: ulib.o usys.o printf.o umalloc.o
+	gcc -fno-pic -std=gnu99 -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -march=i686 -Werror -fno-omit-frame-pointer 	-fno-stack-protector -fno-pie -no-pie -fno-pic -static 	-fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -march=i686 -Werror -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie  -c -o schedulingTest9.o ./Project_Test/XV6_Tests/schedulingTest9.c
+	ld -m    elf_i386 -N -e main -Ttext 0 -o _schedulingTest9 schedulingTest9.o ulib.o usys.o printf.o umalloc.o
+	objdump -S _schedulingTest9 > schedulingTest9.asm
+	$(OBJDUMP) -t _schedulingTest9 | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > schedulingTest9.sym
 
 _quitXV6: ulib.o usys.o printf.o umalloc.o
 	gcc -fno-pic -std=gnu99 -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -march=i686 -Werror -fno-omit-frame-pointer 	-fno-stack-protector -fno-pie -no-pie -fno-pic -static 	-fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -march=i686 -Werror -fno-omit-frame-pointer -fno-stack-protector -fno-pie -no-pie  -c -o quitXV6.o ./Project_Test/XV6_Tests/quitXV6.c

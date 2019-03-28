@@ -1,5 +1,5 @@
-pathTest.o: Project_Test/XV6_Tests/pathTest.c /usr/include/stdc-predef.h \
- Project_Test/XV6_Tests/../../param.h \
+schedulingTest9.o: Project_Test/XV6_Tests/schedulingTest9.c \
+ /usr/include/stdc-predef.h Project_Test/XV6_Tests/../../param.h \
  Project_Test/XV6_Tests/../../types.h Project_Test/XV6_Tests/../../stat.h \
  Project_Test/XV6_Tests/../../user.h Project_Test/XV6_Tests/../../fs.h \
  Project_Test/XV6_Tests/../../fcntl.h \
