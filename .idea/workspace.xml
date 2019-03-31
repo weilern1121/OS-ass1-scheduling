@@ -13,20 +13,27 @@
   <component name="ChangeListManager">
     <list default="true" id="27da821e-cebc-4520-93d2-ae8102e4f0a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_14/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_14/makefileCommandForDebug.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_14/testOutput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_usertests" beforeDir="false" afterPath="$PROJECT_DIR$/_usertests" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_0/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_0/makefileCommandForDebug.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_0/makefileError.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_0/testOutput.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_1/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_1/makefileCommandForDebug.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/Tests/test_1/testOutput.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/bin/ProjectTest.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/bin/Tests.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_Test/bin/start" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sh" beforeDir="false" afterPath="$PROJECT_DIR$/_sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fs.img" beforeDir="false" afterPath="$PROJECT_DIR$/fs.img" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel" beforeDir="false" afterPath="$PROJECT_DIR$/kernel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel.asm" beforeDir="false" afterPath="$PROJECT_DIR$/kernel.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel.sym" beforeDir="false" afterPath="$PROJECT_DIR$/kernel.sym" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proc.c" beforeDir="false" afterPath="$PROJECT_DIR$/proc.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proc.o" beforeDir="false" afterPath="$PROJECT_DIR$/proc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedulingTest9.asm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedulingTest9.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedulingTest9.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedulingTest9.sym" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sh.asm" beforeDir="false" afterPath="$PROJECT_DIR$/sh.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sh.c" beforeDir="false" afterPath="$PROJECT_DIR$/sh.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sh.o" beforeDir="false" afterPath="$PROJECT_DIR$/sh.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sh.sym" beforeDir="false" afterPath="$PROJECT_DIR$/sh.sym" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xv6.img" beforeDir="false" afterPath="$PROJECT_DIR$/xv6.img" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -77,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sh.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1711">
-              <caret line="139" selection-start-line="139" selection-end-line="139" />
+            <state relative-caret-position="170">
+              <caret line="270" column="10" selection-start-line="270" selection-start-column="7" selection-end-line="270" selection-end-column="10" />
               <folding>
                 <element signature="e#11#29#0" expanded="true" />
               </folding>
@@ -89,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/proc.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="759" column="26" selection-start-line="759" selection-start-column="26" selection-end-line="759" selection-end-column="26" />
+            <state relative-caret-position="-40">
+              <caret line="899" selection-start-line="899" selection-end-line="899" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -162,7 +169,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>deta</find>
       <find>de</find>
       <find>pri</find>
       <find>rouncrobin</find>
@@ -180,7 +186,6 @@
       <find>counter++</find>
       <find>case 1:</find>
       <find>fork</find>
-      <find>tick</find>
       <find>&amp;tick</find>
       <find>path</find>
       <find>buf</find>
@@ -192,6 +197,8 @@
       <find>scheduler</find>
       <find>sti();</find>
       <find>kill</find>
+      <find>reverse_string</find>
+      <find>tick</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -300,21 +307,22 @@
       <workItem from="1553685310594" duration="595000" />
       <workItem from="1553693519506" duration="5869000" />
       <workItem from="1553700520869" duration="6624000" />
-      <workItem from="1553787941018" duration="3591000" />
+      <workItem from="1553787941018" duration="4192000" />
+      <workItem from="1554036239371" duration="1700000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89745000" />
+    <option name="totallyTimeSpent" value="92046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="925" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3032651" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3065855" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.15201005" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.22613065" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="CMake" order="3" weight="0.32914573" />
@@ -573,8 +581,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sh.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1711">
-          <caret line="139" selection-start-line="139" selection-end-line="139" />
+        <state relative-caret-position="170">
+          <caret line="270" column="10" selection-start-line="270" selection-start-column="7" selection-end-line="270" selection-end-column="10" />
           <folding>
             <element signature="e#11#29#0" expanded="true" />
           </folding>
@@ -583,8 +591,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/proc.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="759" column="26" selection-start-line="759" selection-start-column="26" selection-end-line="759" selection-end-column="26" />
+        <state relative-caret-position="-40">
+          <caret line="899" selection-start-line="899" selection-end-line="899" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>

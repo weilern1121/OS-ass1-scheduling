@@ -58,7 +58,7 @@ void
 update_procs_performances(void)
 {
     struct proc *p;
-    counter++;
+    counter=ticks;
 
     acquire(&ptable.lock);
 
@@ -252,10 +252,10 @@ userinit(void)
     p->accumulator=0;          //surely 0 because this is the first initialized process
 
 
-    acquire(&tickslock);
-    p->proc_perf.ctime = ticks;
+    //acquire(&tickslock);
+    p->proc_perf.ctime = counter;
     //??        wakeup(&ticks);
-    release(&tickslock);
+    //release(&tickslock);
 
     //add np (i.e currproc) to the priority queue
     pushToSpecificQueue(p);
@@ -328,13 +328,13 @@ fork(void)
     np->priority=5;
     np->RUNNABLE_wait_time=counter;
 
-    acquire(&tickslock);
-    np->proc_perf.ctime = ticks;
+    //acquire(&tickslock);
+    np->proc_perf.ctime = counter;
     np->proc_perf.retime = 0;
     np->proc_perf.rutime = 0;
     np->proc_perf.stime = 0;
     //??        wakeup(&ticks);
-    release(&tickslock);
+    //release(&tickslock);
 
     //update the accumulator value
     updateAccumulator(np);
@@ -377,9 +377,9 @@ exit(int status)
     acquire(&ptable.lock);
 
     // update termination time
-    acquire(&tickslock);
-    curproc->proc_perf.ttime = ticks;
-    release(&tickslock);
+    //acquire(&tickslock);
+    curproc->proc_perf.ttime = counter;
+    //release(&tickslock);
 
 
    /* cprintf(" CTIME : %d     \n" , curproc->proc_perf.ctime);
@@ -688,11 +688,7 @@ sleep(void *chan, struct spinlock *lk)
         panic("sleep without lk");
 
 
-    if(currpolicy == 2 || currpolicy == 3)
-    {
-        p->accumulator+=p->priority;
-    }
-    rpholder.remove(p); //remove p from RUNNING queue
+
 
     // Must acquire ptable.lock in order to
     // change p->state and then call sched.
@@ -707,7 +703,11 @@ sleep(void *chan, struct spinlock *lk)
     // Go to sleep.
     p->chan = chan;
     p->state = SLEEPING;
-
+    if(currpolicy == 2 || currpolicy == 3)
+    {
+        p->accumulator+=p->priority;
+    }
+    rpholder.remove(p); //remove p from RUNNING queue
     sched();
 
     // Tidy up.
@@ -895,11 +895,8 @@ policy(int num){
         case 1:
             if(num==2 || num==3){
                 rrq.switchToPriorityQueuePolicy();
-                //if(!rrq.switchToPriorityQueuePolicy())
-                //    panic("error in switch from rouncrobin to priority queue\n");
                 //if num=2 ->check that there are no priority=0
                 if(num==2)
-                    //priorityUnExtended();
                 {
                     struct proc *p;
                     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {

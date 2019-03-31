@@ -54,7 +54,7 @@ int fork1(void);  // Fork but panics on failure.
 void panic(char*);
 struct cmd *parsecmd(char*);
 char PATH[512]; // PATH ENV VAR
-
+/*
 void
 swap( int a , int b , char *str)
 {
@@ -75,9 +75,9 @@ reverse_string( char *str )
         if( k == len/2 )
             break;
     }
-}
+}*/
 
-char*
+void*
 strconcat (const char *first, const char *second, char* dest){
     //This func gets two strings and concatted them into dest.
     //NOTE - dest is already MALLOCed before this function call.
@@ -91,7 +91,7 @@ strconcat (const char *first, const char *second, char* dest){
 }
 
 
-char*
+void*
 strcpyuntildelimiter(char *s, const char *t, char delim)
 {
     //This func take a string(t) and make a copy
@@ -106,7 +106,7 @@ strcpyuntildelimiter(char *s, const char *t, char delim)
     *s='\0';
     return os;
 }
-
+/*
 int
 execWithPath(char *path, char **argv)
 {
@@ -136,7 +136,7 @@ execWithPath(char *path, char **argv)
     }
     //free(curr_path);
     return -1;
-}
+}*/
 
 // Execute cmd.  Never returns.
 void
@@ -181,7 +181,7 @@ runcmd(struct cmd *cmd)
             while( curr_path != NULL )
             {
                 //get the string until the delimiter
-                char* str2= malloc(100);
+                char* str2= malloc(strlen(PATH));
                 str2=strcpyuntildelimiter(str2,curr_path,':');
 
                 //delete the first part until delimiter from th e path
@@ -189,13 +189,16 @@ runcmd(struct cmd *cmd)
                 if(curr_path!=NULL)
                     curr_path++;
                 //get the concated string of the curr_path @ path (i.e the order)
-                char* str3=malloc ((strlen(str2) + strlen(path) - 1));
+                char* str3=malloc ((strlen(str2) + strlen(path) + 1));
                 str3=strconcat(str2,path,str3);
                 ecmd->argv[0]=str3;
                 exec( ecmd->argv[0] , ecmd->argv );
                 // if got here- exec failed
                 // than, we keep iterate on path
+                free(str2);
+                free(str3);
             }
+            free(curr_path);
             printf(2, "exec %s failed\n", ecmd->argv[0]);
 
             break;
