@@ -7,11 +7,11 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/weilern/os192/ass1/OS-ass1-scheduling/. 
+C_INCLUDES = -I/home/yoav/Desktop/Git/OS-ass1-scheduling/. 
 
 CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/weilern/os192/ass1/OS-ass1-scheduling/. 
+CXX_INCLUDES = -I/home/yoav/Desktop/Git/OS-ass1-scheduling/. 
 

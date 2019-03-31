@@ -8,304 +8,304 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug"/>
+				<Option working_dir="/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug"/>
+				<Option working_dir="/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Assignment1">
-				<Option output="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Assignment1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug"/>
+				<Option output="/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Assignment1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/weilern/os192/ass1/OS-ass1-scheduling/."/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/home/yoav/Desktop/Git/OS-ass1-scheduling/."/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment1"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment1"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Assignment1/fast">
-				<Option output="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Assignment1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug"/>
+				<Option output="/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Assignment1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/weilern/os192/ass1/OS-ass1-scheduling/."/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/home/yoav/Desktop/Git/OS-ass1-scheduling/."/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment1/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 Assignment1/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug"/>
+				<Option working_dir="/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/weilern/os192/ass1/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/yoav/Desktop/Git/OS-ass1-scheduling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/asm.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/asm.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ass1ds.cpp">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/ass1ds.cpp">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ass1ds.hpp">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/ass1ds.hpp">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/bio.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/bio.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/bootmain.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/bootmain.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/buf.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/buf.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/cat.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/cat.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/console.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/console.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/date.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/date.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/defs.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/defs.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/echo.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/echo.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/elf.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/elf.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/exec.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/exec.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/fcntl.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/fcntl.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/file.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/file.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/file.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/file.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/forktest.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/forktest.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/fs.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/fs.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/fs.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/fs.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/grep.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/grep.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ide.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/ide.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/init.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/init.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ioapic.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/ioapic.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/kalloc.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/kalloc.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/kbd.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/kbd.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/kbd.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/kbd.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/kill.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/kill.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/lapic.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/lapic.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ln.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/ln.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/log.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/log.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ls.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/ls.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/main.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/main.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/memide.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/memide.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/memlayout.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/memlayout.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/mkdir.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/mkdir.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/mkfs.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/mkfs.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/mmu.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/mmu.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/mp.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/mp.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/mp.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/mp.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/param.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/param.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/picirq.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/picirq.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/pipe.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/pipe.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/policy.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/policy.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/printf.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/printf.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/proc.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/proc.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/proc.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/proc.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/rm.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/rm.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sanity.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/sanity.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/schedulinginterface.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/schedulinginterface.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sh.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/sh.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sleeplock.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/sleeplock.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sleeplock.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/sleeplock.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/spinlock.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/spinlock.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/spinlock.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/spinlock.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/stat.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/stat.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/stressfs.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/stressfs.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/string.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/string.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/syscall.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/syscall.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/syscall.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/syscall.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sysfile.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/sysfile.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/sysproc.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/sysproc.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/tmp.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/tmp.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/trap.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/trap.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/traps.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/traps.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/types.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/types.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/uart.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/uart.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/ulib.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/ulib.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/umalloc.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/umalloc.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/user.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/user.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/vm.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/vm.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/wc.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/wc.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/x86.h">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/x86.h">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/zombie.c">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/zombie.c">
 			<Option target="Assignment1"/>
 		</Unit>
-		<Unit filename="/home/weilern/os192/ass1/OS-ass1-scheduling/CMakeLists.txt">
+		<Unit filename="/home/yoav/Desktop/Git/OS-ass1-scheduling/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

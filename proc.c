@@ -51,9 +51,6 @@ volatile int currpolicy=1; //default- RoundRobin
 volatile long long counter=0; //addition to 3.3
 
 
-
-
-
 void
 update_procs_performances(void)
 {
@@ -85,9 +82,6 @@ update_procs_performances(void)
 
     release(&ptable.lock);
 }
-
-
-
 
 
 void
@@ -251,11 +245,7 @@ userinit(void)
     p->RUNNABLE_wait_time=0;    //surely 0 because this is the first initialized process
     p->accumulator=0;          //surely 0 because this is the first initialized process
 
-
-    //acquire(&tickslock);
     p->proc_perf.ctime = counter;
-    //??        wakeup(&ticks);
-    //release(&tickslock);
 
     //add np (i.e currproc) to the priority queue
     pushToSpecificQueue(p);
@@ -328,13 +318,10 @@ fork(void)
     np->priority=5;
     np->RUNNABLE_wait_time=counter;
 
-    //acquire(&tickslock);
     np->proc_perf.ctime = counter;
     np->proc_perf.retime = 0;
     np->proc_perf.rutime = 0;
     np->proc_perf.stime = 0;
-    //??        wakeup(&ticks);
-    //release(&tickslock);
 
     //update the accumulator value
     updateAccumulator(np);
@@ -377,16 +364,7 @@ exit(int status)
     acquire(&ptable.lock);
 
     // update termination time
-    //acquire(&tickslock);
     curproc->proc_perf.ttime = counter;
-    //release(&tickslock);
-
-
-   /* cprintf(" CTIME : %d     \n" , curproc->proc_perf.ctime);
-    cprintf(" TTIME : %d     \n" , curproc->proc_perf.ttime);
-    cprintf(" RUTIME : %d     \n" , curproc->proc_perf.rutime);
-    cprintf(" RETIME : %d     \n" , curproc->proc_perf.retime);
-    cprintf(" STIME : %d     \n\n\n" , curproc->proc_perf.stime);*/
 
     // Parent might be sleeping in wait().
     wakeup1(curproc->parent);
@@ -469,7 +447,6 @@ scheduler(void)
     struct cpu *c = mycpu();
     struct proc *max_p=myproc();
     c->proc = 0;
-    //counter=0;
 
     for(;;){
         // Enable interrupts on this processor.
@@ -863,15 +840,6 @@ priority(int prio){
 
 
 void
-priorityUnExtended(){
-    struct proc *p;
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
-        if (p->priority == 0)
-            p->priority = 1;
-    }
-}
-
-void
 switchToRoundRobin(void){
     struct proc *p;
     if(!pq.switchToRoundRobinPolicy())
@@ -884,11 +852,8 @@ switchToRoundRobin(void){
 void
 policy(int num){
     //check legal input
-    //TODO- need to check if there is a need to change to default or to panic
     if(num>3 || num<1)
         return; //currpolicy get the default policy
-    // Enable interrupts on this processor.
-    //sti();
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
     switch (currpolicy){
@@ -918,7 +883,6 @@ policy(int num){
                 switchToRoundRobin();
             }
             if(num==2){
-                //priorityUnExtended();
                 struct proc *p;
                 for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
                     if (p->priority == 0)
@@ -960,7 +924,6 @@ wait_stat(int* status, struct perf* performance)
 
             if(p->state == ZOMBIE){
 
-                //TODO we added values here;
                 performance->ctime = p->proc_perf.ctime;
                 performance->ttime = p->proc_perf.ttime;
                 performance->stime = p->proc_perf.stime;
@@ -976,7 +939,6 @@ wait_stat(int* status, struct perf* performance)
                 p->name[0] = 0;
                 p->killed = 0;
                 p->state = UNUSED;
-                //TODO - maybe need to use argptr
                 if(status!=null)
                     p->exit_status= (int)status ;
 
